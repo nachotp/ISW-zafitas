@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eS">
 
 <head>
   <!-- Required meta tags -->
@@ -9,15 +9,15 @@
   <title>GPI Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="node_modules/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.min.css" />
   <link rel="stylesheet" href="node_modules/jvectormap/jquery-jvectormap.css" />
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{%  static "css/style.css" %}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{% static "images/favicon.png" %}" />
 </head>
@@ -26,8 +26,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo_mini.svg" alt="logo"></a>
+        <a class="navbar-brand brand-logo" href="index.html"><img src="{% static "images/logo.svg" %}" alt="logo"></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{% static "images/logo_mini.svg" %}" alt="logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <p class="page-name d-none d-lg-block">Hi, Dave Mattew</p>
@@ -48,7 +48,7 @@
             <div class="dropdown-menu navbar-dropdown mail-notification dropdownAnimation" aria-labelledby="MailDropdown">
               <a class="dropdown-item" href="#">
                 <div class="sender-img">
-                  <img src="images/faces/face6.jpg" alt="">
+                  <img src="{% static "images/faces/face6.jpg" %}" alt="">
                   <span class="badge badge-success">&nbsp;</span>
                 </div>
                 <div class="sender">
@@ -58,7 +58,7 @@
               </a>
               <a class="dropdown-item" href="#">
                 <div class="sender-img">
-                  <img src="images/faces/face2.jpg" alt="">
+                  <img src="{% static "images/faces/face2.jpg" %}" alt="">
                   <span class="badge badge-success">&nbsp;</span>
                 </div>
                 <div class="sender">
@@ -68,7 +68,7 @@
               </a>
               <a class="dropdown-item" href="#">
                 <div class="sender-img">
-                  <img src="images/faces/face3.jpg" alt="">
+                  <img src="{% static "images/faces/face3.jpg" %}" alt="">
                   <span class="badge badge-primary">&nbsp;</span>
                 </div>
                 <div class="sender">
@@ -78,7 +78,7 @@
               </a>
               <a class="dropdown-item" href="#">
                 <div class="sender-img">
-                  <img src="images/faces/face4.jpg" alt="">
+                  <img src="{% static "images/faces/face4.jpg" %}" alt="">
                   <span class="badge badge-warning">&nbsp;</span>
                 </div>
                 <div class="sender">
@@ -143,7 +143,7 @@
           </li>
           <li class="nav-item d-none d-sm-block profile-img">
             <a class="nav-link profile-image" href="#">
-              <img src="images/faces/face4.jpg" alt="profile-img">
+              <img src="{% static "images/faces/face4.jpg" %}" alt="profile-img">
               <span class="online-status online bg-success"></span>
             </a>
           </li>
@@ -521,17 +521,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <script src="node_modules/flot/jquery.flot.js"></script>
-  <script src="node_modules/flot/jquery.flot.resize.js"></script>
-  <script src="node_modules/flot.curvedlines/curvedLines.js"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/misc.js"></script>
+  <script src="{% static "js/off-canvas.js" %}"></script>
+  <script src="{% static "js/misc.js" %}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
+  <script src="{% static "js/dashboard.js" %}"></script>
   <!-- End custom js for this page-->
 </body>
 
