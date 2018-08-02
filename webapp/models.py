@@ -36,6 +36,7 @@ class ProductoEnBodega(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     idBodega = models.ForeignKey(Bodega, on_delete=models.CASCADE)
 
+
 class Cotizacion(models.Model):
     idProducto = models.IntegerField(primary_key=True)
     monto = models.IntegerField(verbose_name="Monto")
@@ -46,6 +47,7 @@ class Cotizacion(models.Model):
         verbose_name = 'cotizacion'
         verbose_name_plural = 'cotizaciones'
 
+
 class Obra(models.Model):
     idOrden = models.IntegerField(primary_key=True)
     ubicacion =  models.CharField(max_length=100, verbose_name="Ubicacion")
@@ -53,6 +55,7 @@ class Obra(models.Model):
     class Meta:
         verbose_name = 'obra'
         verbose_name_plural = 'obras'
+
 
 class Pedido(models.Model):
     idPedido = models.IntegerField(primary_key=True)
@@ -74,12 +77,13 @@ class Perfil(models.Model):
 
     def __str__(self):
         return self.nombre + " - " + self.cargo
-
+    '''
     @receiver(post_save, sender=User)
     def crear_perfil(sender, instance, created, **kwargs):
         if created:
-            Perfil.objects.create(user=instance)
+            Perfil.objects.create(usuario=instance)
 
     @receiver(post_save, sender=User)
     def guardar_perfil(sender, instance, **kwargs):
         instance.profile.save()
+    '''
