@@ -6,7 +6,7 @@ from .models import *
 
 
 class IndexView(TemplateView):
-    template_name = "index.html"
+    template_name = "base.html"
 
 
 class ProductView(DetailView):
