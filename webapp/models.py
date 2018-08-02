@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 import datetime
 
 
@@ -36,8 +38,8 @@ class ProductoEnBodega(models.Model):
 
 class Cotizacion(models.Model):
     idProducto = models.IntegerField(primary_key=True)
-    monto = models.IntegerField(primary_key=True, verbose_name="Monto")
-    cantidad = models.IntegerField(primary_key=True, verbose_name="Cantidad")
+    monto = models.IntegerField(verbose_name="Monto")
+    cantidad = models.IntegerField(verbose_name="Cantidad")
     fecha = models.DateField(verbose_name="fecha", default=datetime.date.today)
 
     class Meta:
@@ -60,10 +62,10 @@ class Pedido(models.Model):
         verbose_name_plural = 'pedidos'
 
 
-class Usuario(models.Model):
+class Perfil(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100, verbose_name="Nombre")
-    rut =  models.IntegerField(verbose_name="RUT",primary_key=True)
-    password = models.CharField(max_length=20, verbose_name="Password")
+    rut = models.IntegerField(verbose_name="RUT")
     PERSONAL_OBRA = "PO"
     ENCARGADO_COMPRA = "EC"
     BODEGUERO = "BG"
@@ -73,6 +75,11 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nombre + " - " + self.cargo
 
-    class Meta:
-        verbose_name = 'usuario'
-        verbose_name_plural = 'usuarios'
+    @receiver(post_save, sender=User)
+    def crear_perfil(sender, instance, created, **kwargs):
+        if created:
+            Perfil.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def guardar_perfil(sender, instance, **kwargs):
+        instance.profile.save()
