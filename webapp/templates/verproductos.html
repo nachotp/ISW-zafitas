@@ -1,7 +1,8 @@
-{%  extends "index.html" %}
+{%  extends "base.html" %}
+
+{% block title %}Productos{% endblock %}
 
 {% block content %}
-
     <h1>{{ object.nombre }}</h1>
-    <p>{{ object.descripcion }} - {{ object.marca }}</p>
+    <p>{{  object.descripcion }}</p>
 {% endblock %}
