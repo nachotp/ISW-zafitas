@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.views.generic import TemplateView, DetailView
 from .models import *
 
@@ -12,3 +9,8 @@ class IndexView(TemplateView):
 class ProductView(DetailView):
     model = Producto
     template_name = "verproductos.html"
+
+
+class SolicitudView(TemplateView):
+    template_name = "solicitudes.html"
+

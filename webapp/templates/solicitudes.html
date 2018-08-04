@@ -1,0 +1,13 @@
+{%  extends "base.html" %}
+
+{% block title %}Solicitud de Insumos{% endblock %}
+Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.
+{% block content %}
+    <h1>{{ object.nombre }}</h1>
+    <p>{{  object.descripcion }}</p>
+{% endblock %}
+
+{% block jsincludes %}
+    <script src="{% static "js/scriptOrdenes.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/selectize.default.css" %}">
+{% endblock %}
