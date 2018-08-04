@@ -1,13 +1,45 @@
 {%  extends "base.html" %}
+{% load static %}
 
 {% block title %}Solicitud de Insumos{% endblock %}
 Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.
 {% block content %}
-    <h1>{{ object.nombre }}</h1>
-    <p>{{  object.descripcion }}</p>
+
+<div class="container">
+    <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Remover</th>
+      </tr>
+    </thead>
+
+    <tbody id="tablaProductos">
+      <tr id=1>
+        <td>
+          <select id="select1"  class="demo-default" name="id_producto1"></select>
+        </td>
+
+        <td>
+          <input type="number" id="numb1" name="cant1"  min="0" class="form-control count"/>
+        </td>
+
+        <td>
+        </td>
+      </tr>
+
+    </tbody>
+    </table>
+    <br>
+    <a href="#" class="btn btn-info btn-fill btn-lg add_product"><i class="mdi mdi-plus-circle-outline"></i> Agregar otro producto</a>
+</div>
+
+
 {% endblock %}
 
 {% block jsincludes %}
+    <script src="{% static "js/selectize.min.js" %}"></script>
     <script src="{% static "js/scriptOrdenes.js" %}"></script>
     <link rel="stylesheet" href="{% static "css/selectize.default.css" %}">
 {% endblock %}
