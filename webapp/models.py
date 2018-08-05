@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 import datetime
 
 
@@ -59,10 +57,25 @@ class Obra(models.Model):
 
 class Pedido(models.Model):
     idPedido = models.IntegerField(primary_key=True)
-
+    comentario = models.CharField(max_length=300, verbose_name="Comentario")
+    fecha = models.DateField(verbose_name="fecha", default=datetime.date.today)
+    ING = "Ingresado"
+    ET = "En Transito"
+    EB = "En Bodega"
+    EP = "Esperando Proveedor"
+    RR = "Rechazado"
+    FF = "Entregado"
+    estados = ((ING,"Ingresado"),(ET,"En Transito"),(EB,"En Bodega"),(EP,"Esperando Proveedor"),(RR,"Rechazado"),(FF,"Entregado"))
+    estado = models.CharField(max_length=20, choices=estados, default=ING, verbose_name="Estado")
     class Meta:
         verbose_name = 'pedido'
         verbose_name_plural = 'pedidos'
+
+
+class ProductoEnPedido(models.Model):
+    idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    idPedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    cantidad = models.IntegerField(default=1)
 
 
 class Perfil(models.Model):

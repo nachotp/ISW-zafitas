@@ -17,6 +17,10 @@ class ProductView(DetailView):
 class SolicitudView(TemplateView):
     template_name = "solicitudes.html"
 
+class PedidoView(TemplateView):
+    template_name = "verpedidos.html"
+
+
 
 @method_decorator(login_required, name="dispatch")
 class AjaxProductosView(ListView):
