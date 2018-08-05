@@ -1,5 +1,6 @@
 {%  extends "base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}Solicitud de Insumos{% endblock %}
 
@@ -7,34 +8,38 @@
 <p>Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.</p>
 <div class="container">
     <select id="selectObra"  class="demo-default" name="obra"></select>
-    <table class="table table-striped" >
+
+    {{ productos.management_form }}
+    <table class="table table-striped">
     <thead>
-      <tr>
+    <tr>
         <th>Producto</th>
         <th>Cantidad</th>
         <th></th>
         <th>Remover</th>
-      </tr>
+    </tr>
     </thead>
-
     <tbody id="tablaProductos">
-      <tr id=1>
+    {% for form in productos %}
+        <tr id=0>
         <td>
-          <select id="select1"  class="demo-default" name="id_producto1"></select>
+            {{ form.producto }}
         </td>
 
         <td>
-          <input type="number" id="numb1" name="cant1"  min="0" class="form-control count"/>
+            {{ form.cantidad | add_class:"form-control cant" }}
         </td>
         <td>
-            <input type="hidden" id="obra1" name="obra1" value="">
+            {{ form.obra.as_hidden }}
         </td>
         <td>
+
         </td>
       </tr>
-
+    {% endfor %}
     </tbody>
     </table>
+
     <br>
     <a href="#" class="btn btn-primary btn-fill btn-lg add_product"><i class="mdi mdi-plus-circle-outline"></i> Agregar otro producto</a>
 </div>
