@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import TemplateView, DetailView, ListView, FormView
 from .models import *
 
 
@@ -14,7 +14,7 @@ class ProductView(DetailView):
     template_name = "verproductos.html"
 
 
-class SolicitudView(TemplateView):
+class SolicitudView(FormView):
     template_name = "solicitudes.html"
 
 

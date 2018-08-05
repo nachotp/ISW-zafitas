@@ -7,7 +7,7 @@ $(document).ready(function(){
     for (var i = 1; i <= cant_productos; i++) {
       value = $('#select'+i).val();
       if (!isNaN(value) && value.length !== 0) {
-        if (parseInt(value) == prod){
+        if (parseInt(value) === prod){
           if (seenOnce){
             return false;
           } else {
@@ -21,13 +21,14 @@ $(document).ready(function(){
 
   $('#selectObra').selectize({
     valueField: 'id',
-    labelField: 'ubicacion',
-    searchField: 'ubicacion',
+    searchField: 'nombre',
+    labelField: 'nombre',
     preload: true,
+    create: false,
     options: [],
     load: function(query, callback) {
     $.ajax({
-        url: "/getobras",
+        url: "api/getobras",
         type: 'GET',
         dataType: 'json',
         error: function() {
@@ -49,10 +50,11 @@ $(document).ready(function(){
     labelField: 'nombre',
     searchField: 'nombre',
     preload: true,
+    create: false,
     options: [],
     load: function(query, callback) {
     $.ajax({
-        url: "/getprods",
+        url: "api/getprods",
         type: 'GET',
         dataType: 'json',
         error: function() {

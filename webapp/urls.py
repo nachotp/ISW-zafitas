@@ -6,8 +6,12 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('solicitud', SolicitudView.as_view(), name="Solicitud"),
     path("verprod/<pk>/", ProductView.as_view(), name="verProducto"),
-    path("getprods", AjaxProductosView.as_view()),
-    path("getobras", AjaxObrasView.as_view()),
     path("stock", StockView.as_view(), name='verStock'),
     path('pedidos', PedidoView.as_view(), name='verPedidos')
+]
+
+# API URLS
+urlpatterns += [
+    path("api/getprods", AjaxProductosView.as_view()),
+    path("api/getobras", AjaxObrasView.as_view()),
 ]
