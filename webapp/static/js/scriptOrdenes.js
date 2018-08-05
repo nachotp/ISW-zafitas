@@ -1,9 +1,10 @@
+var cant_productos = 1;
+
 $(document).ready(function(){
   var uniqueProducts = function(prod){
-    var max = parseInt($('#cant_productos').val());
     var value;
     var seenOnce = false;
-    for (var i = 1; i <= max; i++) {
+    for (var i = 1; i <= cant_productos; i++) {
       value = $('#select'+i).val();
       if (!isNaN(value) && value.length !== 0) {
         if (parseInt(value) == prod){
@@ -17,6 +18,31 @@ $(document).ready(function(){
     }
     return true;
   };
+
+  $('#selectObra').selectize({
+    valueField: 'id',
+    labelField: 'ubicacion',
+    searchField: 'ubicacion',
+    preload: true,
+    options: [],
+    load: function(query, callback) {
+    $.ajax({
+        url: "/getobras",
+        type: 'GET',
+        dataType: 'json',
+        error: function() {
+            callback();
+        },
+        success: function(res) {
+          callback(res);
+        }
+      });
+    },
+    onChange: function (value) {
+      for (var i = 1; i <= cant_productos; i++) {
+        $('#obra'+i).val(value);
+    }}
+  });
 
   $('#select1').selectize({
     valueField: 'id',

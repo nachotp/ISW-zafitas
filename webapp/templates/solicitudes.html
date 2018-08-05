@@ -6,11 +6,13 @@
 {% block content %}
 <p>Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.</p>
 <div class="container">
+    <select id="selectObra"  class="demo-default" name="obra"></select>
     <table class="table table-striped" >
     <thead>
       <tr>
         <th>Producto</th>
         <th>Cantidad</th>
+        <th></th>
         <th>Remover</th>
       </tr>
     </thead>
@@ -24,7 +26,9 @@
         <td>
           <input type="number" id="numb1" name="cant1"  min="0" class="form-control count"/>
         </td>
-
+        <td>
+            <input type="hidden" id="obra1" name="obra1" value="">
+        </td>
         <td>
         </td>
       </tr>
