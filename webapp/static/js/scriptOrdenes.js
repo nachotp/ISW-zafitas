@@ -26,7 +26,7 @@ $(document).ready(function(){
     options: [],
     load: function(query, callback) {
     $.ajax({
-        url: "/getprods ",
+        url: "/getprods",
         type: 'GET',
         dataType: 'json',
         error: function() {
