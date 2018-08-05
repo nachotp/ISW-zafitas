@@ -1,0 +1,42 @@
+{%  extends "base.html" %}
+{% load staticfiles %}
+{% block jsincludes %}
+    <link rel="stylesheet" href="{% static "css/jquery.dynatable.css" %}">
+    <script src="{% static "js/jquery.dynatable.js" %}"></script>
+    <script> $(function() {$('#tabla-stock').dynatable();} );</script>
+{% block title %}Stock Disponible{% endblock %}
+
+
+
+{% block content %}
+<table id="tabla-stock">
+    <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Ubicación</th>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+    </thead>
+
+    <tbody>
+    {% if object_list %}
+      {% for producto in object_list %}
+        <tr>
+            <td>{{producto.id}}</td>
+            <td>{{producto.idProducto.nombre}}</td>
+            <td>{{producto.idBodega.ubicacion}}</td>
+            <td>{{producto.idProducto.descripcion}}</td>
+            <td>1</td>
+        </tr>
+
+      {% endfor %}
+
+    {% else %}
+      <p>No hay nada.</p>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}
+
+
+{% endblock %}

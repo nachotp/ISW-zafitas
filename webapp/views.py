@@ -32,3 +32,8 @@ class AjaxProductosView(ListView):
         queryset = self.get_queryset()
         data = []
         return JsonResponse(data, status=200, safe=False)
+
+class StockView(ListView):
+    model= ProductoEnBodega
+    context_object_name = 'productos_en_bodega'
+    template_name = "verstock.html"
