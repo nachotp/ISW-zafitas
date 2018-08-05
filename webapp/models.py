@@ -35,6 +35,7 @@ class ProductoEnBodega(models.Model):
     cantidad = models.IntegerField(default=0)
 
 
+'''
 class Cotizacion(models.Model):
     idProducto = models.IntegerField(primary_key=True)
     monto = models.IntegerField(verbose_name="Monto")
@@ -44,6 +45,7 @@ class Cotizacion(models.Model):
     class Meta:
         verbose_name = 'cotizacion'
         verbose_name_plural = 'cotizaciones'
+'''
 
 
 class Obra(models.Model):
