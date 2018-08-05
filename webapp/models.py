@@ -1,12 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 import datetime
 
 
 class Producto(models.Model):
-    idProducto = models.IntegerField(primary_key=True)
+    codigo = models.CharField(max_length=10, unique=True, verbose_name="Código")
     nombre = models.CharField(max_length=100, verbose_name="Nombre")
     descripcion = models.CharField(max_length=400, verbose_name="Descripción del producto")
     marca = models.CharField(max_length=100, verbose_name="Marca")
@@ -21,7 +19,6 @@ class Producto(models.Model):
 
 
 class Bodega(models.Model):
-    idBodega = models.AutoField(primary_key=True)
     ubicacion = models.CharField(max_length=100, verbose_name="Ubicacion")
 
     def __str__(self):
@@ -35,8 +32,10 @@ class Bodega(models.Model):
 class ProductoEnBodega(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     idBodega = models.ForeignKey(Bodega, on_delete=models.CASCADE)
+    cantidad = models.IntegerField(default=0)
 
 
+'''
 class Cotizacion(models.Model):
     idProducto = models.IntegerField(primary_key=True)
     monto = models.IntegerField(verbose_name="Monto")
@@ -46,11 +45,11 @@ class Cotizacion(models.Model):
     class Meta:
         verbose_name = 'cotizacion'
         verbose_name_plural = 'cotizaciones'
+'''
 
 
 class Obra(models.Model):
-    idOrden = models.IntegerField(primary_key=True)
-    ubicacion =  models.CharField(max_length=100, verbose_name="Ubicacion")
+    ubicacion = models.CharField(max_length=100, verbose_name="Ubicacion")
 
     class Meta:
         verbose_name = 'obra'
@@ -58,11 +57,27 @@ class Obra(models.Model):
 
 
 class Pedido(models.Model):
-    idPedido = models.IntegerField(primary_key=True)
+    obra = models.ForeignKey(Obra, verbose_name="Obra", on_delete=models.CASCADE)
+    comentario = models.CharField(max_length=300, verbose_name='Comentario')
+    fecha = models.DateField(verbose_name="fecha", default=datetime.date.today)
+    ING = "Ingresado"
+    ET = "En Transito"
+    EB = "En Bodega"
+    EP = "Esperando Proveedor"
+    RR = "Rechazado"
+    FF = "Entregado"
+    estados = ((ING, "Ingresado"), (ET, "En Transito"), (EB, "En Bodega"), (EP, "Esperando Proveedor"), (RR, "Rechazado"), (FF, "Entregado"))
+    estado = models.CharField(max_length=20, choices=estados, default=ING, verbose_name="Estado")
 
     class Meta:
         verbose_name = 'pedido'
         verbose_name_plural = 'pedidos'
+
+
+class ProductoEnPedido(models.Model):
+    idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    idPedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    cantidad = models.IntegerField(default=1)
 
 
 class Perfil(models.Model):
@@ -72,11 +87,16 @@ class Perfil(models.Model):
     PERSONAL_OBRA = "PO"
     ENCARGADO_COMPRA = "EC"
     BODEGUERO = "BG"
-    cargos = ((PERSONAL_OBRA,"Personal de obra"),(ENCARGADO_COMPRA,"Encargado de Compras"),(BODEGUERO,"Bodeguero"))
-    cargo = models.CharField(max_length=2,choices=cargos, default=PERSONAL_OBRA ,verbose_name="Cargo")
+    cargos = ((PERSONAL_OBRA, "Personal de obra"), (ENCARGADO_COMPRA, "Encargado de Compras"), (BODEGUERO, "Bodeguero"))
+    cargo = models.CharField(max_length=2, choices=cargos, default=PERSONAL_OBRA, verbose_name="Cargo")
+
+    class Meta:
+        verbose_name = 'perfil'
+        verbose_name_plural = 'perfiles'
 
     def __str__(self):
         return self.nombre + " - " + self.cargo
+
     '''
     @receiver(post_save, sender=User)
     def crear_perfil(sender, instance, created, **kwargs):

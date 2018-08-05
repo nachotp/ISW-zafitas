@@ -17,6 +17,10 @@ class ProductView(DetailView):
 class SolicitudView(TemplateView):
     template_name = "solicitudes.html"
 
+class PedidoView(TemplateView):
+    template_name = "verpedidos.html"
+
+
 
 @method_decorator(login_required, name="dispatch")
 class AjaxProductosView(ListView):
@@ -30,7 +34,9 @@ class AjaxProductosView(ListView):
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
-        data = []
+        data = [{'id': p.idProducto,
+                 'nombre': p.nombre,
+                 'desc': p.descripcion} for p in queryset]
         return JsonResponse(data, status=200, safe=False)
 
 class StockView(ListView):

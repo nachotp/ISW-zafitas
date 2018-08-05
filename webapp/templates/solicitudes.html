@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block title %}Solicitud de Insumos{% endblock %}
-Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.
-{% block content %}
 
+{% block content %}
+<p>Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.</p>
 <div class="container">
     <table class="table table-striped" >
     <thead>
@@ -32,7 +32,7 @@ Desde aquí puedes realizar una solicitud de insumos para verificación de bodeg
     </tbody>
     </table>
     <br>
-    <a href="#" class="btn btn-info btn-fill btn-lg add_product"><i class="mdi mdi-plus-circle-outline"></i> Agregar otro producto</a>
+    <a href="#" class="btn btn-primary btn-fill btn-lg add_product"><i class="mdi mdi-plus-circle-outline"></i> Agregar otro producto</a>
 </div>
 
 
@@ -41,5 +41,5 @@ Desde aquí puedes realizar una solicitud de insumos para verificación de bodeg
 {% block jsincludes %}
     <script src="{% static "js/selectize.min.js" %}"></script>
     <script src="{% static "js/scriptOrdenes.js" %}"></script>
-    <link rel="stylesheet" href="{% static "css/selectize.default.css" %}">
+    <link rel="stylesheet" href="{% static "css/selectize.bootstrap3.css" %}">
 {% endblock %}
