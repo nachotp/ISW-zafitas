@@ -30,5 +30,7 @@ class AjaxProductosView(ListView):
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
-        data = []
+        data = [{'id': p.idProducto,
+                 'nombre': p.nombre,
+                 'desc': p.descripcion} for p in queryset]
         return JsonResponse(data, status=200, safe=False)
