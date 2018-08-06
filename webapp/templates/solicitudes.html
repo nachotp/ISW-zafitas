@@ -7,6 +7,7 @@
 {% block content %}
 <p>Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.</p>
 <div class="container">
+    <label for="selectObra">Obra:</label>
     <select id="selectObra"  class="demo-default" name="obra"></select>
     <form action="{% url 'Solicitud' %}" method="post">
     {% csrf_token %}
@@ -33,9 +34,7 @@
         <td>
             {{ form.obra.as_hidden }}
         </td>
-        <td>
-
-        </td>
+        <td></td>
       </tr>
     {% endfor %}
     </tbody>

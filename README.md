@@ -2,7 +2,7 @@
 
 ## Ambiente y ejecución:
 El sistema está implementado en Python 3 usando el paquete Django.
-Para utilizarlo se debe realizar lo siguiente:
+Para utilizarlo se debe realizar lo siguiente fuera del repositorio:
 ```bash
     python3 -m venv djangoenv
     activate djangoenv
@@ -10,6 +10,14 @@ Para utilizarlo se debe realizar lo siguiente:
     pip install -r requirements.txt
     python manage.py runserver
 ```
+Luego entrar a localhost:8000/admin e iniciar sesión con:
+* user: ayudante
+* pass: ayudanteisw
+
+Tras esto se puede ir a localhost:8000/ y probar las opciones implementadas:
+* Crear Solicitud
+* Ver Solicitudes
+* Stock Productos
 
 ## Administración
 Para hacer commit de cambios en modelo de datos:
