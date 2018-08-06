@@ -5,6 +5,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, DetailView, ListView, FormView
 from .models import *
 from .forms import *
+from django.shortcuts import render
 
 
 class IndexView(TemplateView):
@@ -49,14 +50,14 @@ class SolicitudView(FormView):
         print(context)
         return super(SolicitudView, self).form_valid(form)
 
-
 class PedidoView(ListView):
     model = Pedido
     template_name = "verpedidos.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+
+class DetalleView(ListView):
+    model = ProductoEnPedido
+    template_name = "detallepedido.html"
 
 
 class StockView(ListView):

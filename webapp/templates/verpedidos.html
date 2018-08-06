@@ -1,4 +1,4 @@
-{%  extends "base.html" %}
+    {%  extends "base.html" %}
 {% load staticfiles %}
 {% block jsincludes %}
     <link rel="stylesheet" href="{% static "css/jquery.dynatable.css" %}">
@@ -22,7 +22,7 @@
           {% for pedido in object_list %}
             <tr>
                 <td>{{pedido.id}}</td>
-                <td>{{pedido.obra.id}}</td>
+                <td>{{pedido.obra.ubicacion}}</td>
                 <td>{{pedido.fecha}}</td>
                 <td>{{pedido.comentario}}</td>
                 {% if pedido.estado == "Ingresado"%}
@@ -38,7 +38,7 @@
                     {% else %}
                     <td><label class="badge badge-success">{{pedido.estado}}</label></td>
                 {% endif %}
-                <td><a href="http://google.com" class="btn btn-link btn-rounded btn-fw">Detalle del pedido</a></td>
+                <td><a href="http://google.com" class="btn btn-link btn-rounded btn-fw">Detalle del pedido {{pedido.id}}</a></td>
             </tr>
           {% endfor %}
         </tbody>

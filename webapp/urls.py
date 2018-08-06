@@ -7,7 +7,8 @@ urlpatterns = [
     path('solicitud', SolicitudView.as_view(), name="Solicitud"),
     path("verprod/<pk>/", ProductView.as_view(), name="verProducto"),
     path("stock", StockView.as_view(), name='verStock'),
-    path('pedidos', PedidoView.as_view(), name='verPedidos')
+    path('pedidos', PedidoView.as_view(), name='verPedidos'),
+    path('detalle/<pk>', DetalleView.as_view(), name='DetallePedido')
 ]
 
 # API URLS
