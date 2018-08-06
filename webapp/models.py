@@ -57,6 +57,7 @@ class Obra(models.Model):
 
 
 class Pedido(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     obra = models.ForeignKey(Obra, verbose_name="Obra", on_delete=models.CASCADE)
     comentario = models.CharField(max_length=300, verbose_name='Comentario')
     fecha = models.DateField(verbose_name="fecha", default=datetime.date.today)

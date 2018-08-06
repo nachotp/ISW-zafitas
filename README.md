@@ -20,3 +20,7 @@ Luego para hacerlos efectivos:
 ```bash
     python manage.py migrate
 ```
+Generar UML
+```bash
+    python manage.py graph_models -a -X Group,Permission,AbstractUser,LogEntry,ContentType,Session,AbstractBaseSession -o UML.png
+```

@@ -28,6 +28,7 @@ class SolicitudView(FormView):
                 maxforms = int(self.request.POST['form-TOTAL_FORMS'][0])
                 obra = int(self.request.POST['form-0-obra'][0])
                 pedido = Pedido.objects.create(obra=Obra.objects.get(id=obra),
+                                               usuario=self.request.user,
                                                fecha=timezone.now(),
                                                comentario="Funciona!")
                 for i in range(maxforms):
