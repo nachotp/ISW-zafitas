@@ -65,7 +65,7 @@ class Pedido(models.Model):
     ET = "En Transito"
     EB = "En Bodega"
     EP = "Esperando Proveedor"
-    RR =
+    RR = "Rechazado"
     FF = "Entregado"
     estados = ((ING, "Ingresado"), (ET, "En Transito"), (EB, "En Bodega"), (EP, "Esperando Proveedor"), (RR, "Rechazado"), (FF, "Entregado"))
     estado = models.CharField(max_length=20, choices=estados, default=ING, verbose_name="Estado")
