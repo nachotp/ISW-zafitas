@@ -13,6 +13,7 @@ Para utilizarlo se debe realizar lo siguiente:
 Luego entrar a localhost:8000/admin e iniciar sesión con:
 * user: ayudante
 * pass: ayudanteisw
+
 Tras esto se puede ir a localhost:8000/ y probar las opciones implementadas:
 
 
