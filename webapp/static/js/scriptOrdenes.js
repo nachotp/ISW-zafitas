@@ -1,13 +1,15 @@
 var cant_productos = 1;
 
 $(document).ready(function(){
+  $('#id_form-INITIAL_FORMS').val(1);
   var uniqueProducts = function(prod){
     var value;
     var seenOnce = false;
     for (var i = 0; i <= cant_productos; i++) {
       value = $('#id_form-'+i+'-producto').val();
+      console.log(value)
       if (!isNaN(value) && value.length !== 0) {
-        if (parseInt(value) === prod){
+        if (parseInt(value) == prod){
           if (seenOnce){
             return false;
           } else {
@@ -96,16 +98,16 @@ $(document).ready(function(){
   $('.add_product').click(function(){
     var idt = parseInt($('#tablaProductos tr:last').attr('id')) + 1;
     console.log(idt);
-    var lastTotal = $('#tablaProductos').find('tr:last').find("cant").val();
+    var lastTotal = $('#id_form-'+(idt-1)+'-cantidad').val();
     console.log(lastTotal);
-
+    if (lastTotal > 0) {
       $('#tablaProductos tr:last').after(`
       <tr id="`+idt+`">
     <td>
         <select name="form-`+idt+`-producto" id="id_form-`+idt+`-producto" </select>
     </td>
     <td>
-        <input type="number" name="form-`+idt+`-cantidad" min="1" id="id_form-`+idt+`-cantidad" class="form-control cant">
+        <input type="number" name="form-`+idt+`-cantidad" min="1" id="id_form-`+idt+`-cantidad" class="form-control">
     </td>
     <td>
         <input type="hidden" name="form-`+idt+`-obra" id="id_form-`+idt+`-obra" value="`+$('#selectObra').val()+`">
@@ -154,11 +156,11 @@ $(document).ready(function(){
               hideDuration: 200
             });
           }
-    }
+        }
       });
 
       var cantRows = parseInt($('#id_form-TOTAL_FORMS').val());
       $('#id_form-TOTAL_FORMS').val(cantRows + 1);
-  });
-
+    };
+    });
  });

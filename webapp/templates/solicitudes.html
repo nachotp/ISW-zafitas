@@ -8,7 +8,8 @@
 <p>Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.</p>
 <div class="container">
     <select id="selectObra"  class="demo-default" name="obra"></select>
-
+    <form action="{% url 'Solicitud' %}" method="post">
+    {% csrf_token %}
     {{ productos.management_form }}
     <table class="table table-striped">
     <thead>
@@ -39,9 +40,10 @@
     {% endfor %}
     </tbody>
     </table>
-
+    <a href="#" class="btn btn-fill btn-lg add_product"><i class="mdi mdi-plus-circle-outline"></i> Agregar otro producto</a>
     <br>
-    <a href="#" class="btn btn-primary btn-fill btn-lg add_product"><i class="mdi mdi-plus-circle-outline"></i> Agregar otro producto</a>
+    <input type="submit" value="Hacer Pedido" class="btn btn-block btn-primary btn-lg">
+    </form>
 </div>
 
 
