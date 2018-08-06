@@ -13,5 +13,4 @@ urlpatterns = [
 # API URLS
 urlpatterns += [
     path("api/getprods", AjaxProductosView.as_view()),
-    path("api/getobras", AjaxObrasView.as_view()),
-]
+    path("api/getobras", AjaxObrasView.as_view())]

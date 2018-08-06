@@ -1,4 +1,50 @@
 {%  extends "base.html" %}
-
+{% load staticfiles %}
+{% block jsincludes %}
+    <link rel="stylesheet" href="{% static "css/jquery.dynatable.css" %}">
+    <script src="{% static "js/jquery.dynatable.js" %}"></script>
+    <script> $(function() {$('#tabla-stock').dynatable();} );</script>
 {% block title %}Pedidos{% endblock %}
-Desde aquí puedes realizar una solicitud de insumos para verificación de bodega.
+
+
+{% block content %}
+    <table id="tabla-stock">
+        <thead>
+            <th>ID</th>
+            <th>Obra</th>
+            <th>Fecha</th>
+            <th>Comentario</th>
+            <th>Estado</th>
+            <th></th>
+        </thead>
+
+        <tbody>
+          {% for pedido in object_list %}
+            <tr>
+                <td>{{pedido.id}}</td>
+                <td>{{pedido.obra.id}}</td>
+                <td>{{pedido.fecha}}</td>
+                <td>{{pedido.comentario}}</td>
+                {% if pedido.estado == "Ingresado"%}
+                     <td><label class="badge badge-info">{{pedido.estado}}</label></td>
+                    {% elif pedido.estado == "En Transito"%}
+                    <td><label class="badge badge-busy">{{pedido.estado}}</label></td>
+                    {% elif pedido.estado == "En Bodega"%}
+                    <td><label class="badge badge-light">{{pedido.estado}}</label></td>
+                    {% elif pedido.estado == "Esperando Proveedor"%}
+                    <td><label class="badge badge-warning">{{pedido.estado}}</label></td>
+                    {% elif pedido.estado == "Rechazado"%}
+                    <td><label class="badge badge-danger">{{pedido.estado}}</label></td>
+                    {% else %}
+                    <td><label class="badge badge-success">{{pedido.estado}}</label></td>
+                {% endif %}
+                <td><a href="http://google.com" class="btn btn-link btn-rounded btn-fw">Detalle del pedido</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+{% endblock %}
