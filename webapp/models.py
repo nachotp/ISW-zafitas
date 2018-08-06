@@ -73,11 +73,21 @@ class Pedido(models.Model):
         verbose_name = 'pedido'
         verbose_name_plural = 'pedidos'
 
+    def __str__(self):
+        return "Pedido #"+str(self.id) + " " + self.obra.ubicacion
+
 
 class ProductoEnPedido(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     idPedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     cantidad = models.IntegerField(default=1)
+
+    class Meta:
+        verbose_name = 'Producto en pedido'
+        verbose_name_plural = 'Productos en Pedidos'
+
+    def __str__(self):
+        return str(self.cantidad) + " " +self.idProducto.nombre + " | " + str(self.idPedido)
 
 
 class Perfil(models.Model):
