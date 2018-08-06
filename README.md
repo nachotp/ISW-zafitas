@@ -2,7 +2,7 @@
 
 ## Ambiente y ejecución:
 El sistema está implementado en Python 3 usando el paquete Django.
-Para utilizarlo se debe realizar lo siguiente:
+Para utilizarlo se debe realizar lo siguiente fuera del repositorio:
 ```bash
     python3 -m venv djangoenv
     activate djangoenv
