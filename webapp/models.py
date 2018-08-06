@@ -87,7 +87,7 @@ class ProductoEnPedido(models.Model):
         verbose_name_plural = 'Productos en Pedidos'
 
     def __str__(self):
-        return str(self.cantidad) + " " +self.idProducto.nombre + " | " + str(self.idPedido)
+        return str(self.cantidad) + " " + self.idProducto.nombre + " | " + str(self.idPedido)
 
 
 class Perfil(models.Model):
