@@ -15,7 +15,9 @@ Luego entrar a localhost:8000/admin e iniciar sesión con:
 * pass: ayudanteisw
 
 Tras esto se puede ir a localhost:8000/ y probar las opciones implementadas:
-
+* Crear Solicitud
+* Ver Solicitudes
+* Stock Productos
 
 ## Administración
 Para hacer commit de cambios en modelo de datos:
