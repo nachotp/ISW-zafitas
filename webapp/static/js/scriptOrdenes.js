@@ -98,14 +98,14 @@ $(document).ready(function(){
     console.log(idt);
     var lastTotal = $('#tablaProductos').find('tr:last').find("cant").val();
     console.log(lastTotal);
-    if (lastTotal > 0) {
+
       $('#tablaProductos tr:last').after(`
       <tr id="`+idt+`">
     <td>
         <select name="form-`+idt+`-producto" id="id_form-`+idt+`-producto" </select>
     </td>
     <td>
-        <input type="number" name="form-`+idt+`-cantidad" min="1" id="id_form-`+idt+`-cantidad">
+        <input type="number" name="form-`+idt+`-cantidad" min="1" id="id_form-`+idt+`-cantidad" class="form-control cant">
     </td>
     <td>
         <input type="hidden" name="form-`+idt+`-obra" id="id_form-`+idt+`-obra" value="`+$('#selectObra').val()+`">
@@ -154,28 +154,11 @@ $(document).ready(function(){
               hideDuration: 200
             });
           }
-        }
+    }
       });
 
       var cantRows = parseInt($('#id_form-TOTAL_FORMS').val());
       $('#id_form-TOTAL_FORMS').val(cantRows + 1);
-    } else {
-      $.notify({
-        icon: 'mdi mdi-alert',
-        title: "Alerta",
-        message: "Por favor rellena todos los datos del producto anterior."
-        },{
-        element: '#tablaProductos',
-        type: "warning",
-        clickToHide: true,
-        autoHide: true,
-        autoHideDelay: 100,
-        showAnimation: 'slideDown',
-        showDuration: 400,
-        hideAnimation: 'slideUp',
-        hideDuration: 200
-      });
-    }
   });
 
  });
