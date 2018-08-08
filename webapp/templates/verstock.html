@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{% static "css/jquery.dynatable.css" %}">
     <script src="{% static "js/jquery.dynatable.js" %}"></script>
     <script> $(function() {$('#tabla-stock').dynatable();} );</script>
+{% endblock %}
 {% block title %}Stock Disponible{% endblock %}
 
 
@@ -36,7 +37,4 @@
     {% endif %}
     </tbody>
 </table>
-{% endblock %}
-
-
 {% endblock %}

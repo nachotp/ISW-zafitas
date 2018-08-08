@@ -55,7 +55,7 @@ class PedidoView(ListView):
     template_name = "verpedidos.html"
 
 
-class DetalleView(ListView):
+class DetalleView(DetailView):
     model = ProductoEnPedido
     template_name = "detallepedido.html"
 
