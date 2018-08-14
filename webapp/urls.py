@@ -1,4 +1,5 @@
-from django.urls import path, re_path
+from django.urls import path, include
+from django.contrib import admin
 from .views import *
 
 
@@ -8,7 +9,9 @@ urlpatterns = [
     path("verprod/<pk>/", ProductView.as_view(), name="verProducto"),
     path("stock", StockView.as_view(), name='verStock'),
     path('pedidos', PedidoView.as_view(), name='verPedidos'),
-    path('detalle/<pk>', DetallePedidoView.as_view(), name='DetallePedido')
+    path('detalle/<pk>', DetallePedidoView.as_view(), name='DetallePedido'),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
 
 # API URLS
