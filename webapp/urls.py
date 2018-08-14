@@ -1,6 +1,6 @@
-from django.urls import path
-
+from django.urls import path, re_path
 from .views import *
+
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
@@ -8,7 +8,7 @@ urlpatterns = [
     path("verprod/<pk>/", ProductView.as_view(), name="verProducto"),
     path("stock", StockView.as_view(), name='verStock'),
     path('pedidos', PedidoView.as_view(), name='verPedidos'),
-    path('detalle/<pk>', DetalleView.as_view(), name='DetallePedido')
+    path('detalle/<pk>', DetallePedidoView.as_view(), name='DetallePedido')
 ]
 
 # API URLS

@@ -39,7 +39,7 @@
                     {% else %}
                     <td><label class="badge badge-success">{{pedido.estado}}</label></td>
                 {% endif %}
-                <td><a href="http://google.com" class="btn btn-link btn-rounded btn-fw">Detalle del pedido {{pedido.id}}</a></td>
+                <td><a href="detalle/{{pedido.id}}" class="btn btn-link btn-rounded btn-fw">Detalle del pedido {{pedido.id}}</a></td>
             </tr>
           {% endfor %}
         </tbody>

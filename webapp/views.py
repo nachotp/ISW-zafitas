@@ -55,10 +55,14 @@ class PedidoView(ListView):
     template_name = "verpedidos.html"
 
 
-class DetalleView(DetailView):
-    model = ProductoEnPedido
+class DetallePedidoView(DetailView):
+    model = Pedido
     template_name = "detallepedido.html"
-
+    def get_context_data(self, **kwargs):
+        context = super(DetallePedidoView, self).get_context_data(**kwargs)
+        context['productos'] = Producto.objects.all()
+        context['prodenpedidos'] = ProductoEnPedido.objects.all()
+        return context
 
 class StockView(ListView):
     model = ProductoEnBodega

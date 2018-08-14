@@ -1,18 +1,25 @@
 {%  extends "base.html" %}
 {% load staticfiles %}
-{% block title %}Productos en el pedido{% endblock %}
+{% block title %}Productos en el Pedido {{object.id}}{% endblock %}
 {% block content %}
-    <p>asdsad {{ pedidosD }}</p>
 <table class="table table-striped">
     <thead>
     <th>Producto</th>
     <th>Cantidad</th>
     </thead>
     <tbody>
-            <tr>
-            <td>holi</td>
-            <td>holi</td>
-            </tr>
+    {% for pep in prodenpedidos %}
+        {% if pep.idPedido_id == object.id %}
+            {% for prod in productos %}
+                {% if prod.id == pep.idProducto_id%}
+                    <tr>
+                    <td>{{prod.nombre}}</td>
+                    <td>{{pep.cantidad}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
     </tbody>
 </table>
 {% endblock %}
