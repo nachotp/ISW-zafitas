@@ -1,0 +1,44 @@
+{%  extends "base.html" %}
+{% load staticfiles %}
+{% block jsincludes %}
+    <link rel="stylesheet" href="{% static "css/jquery.dynatable.css" %}">
+    <script src="{% static "js/jquery.dynatable.js" %}"></script>
+    <script> $(function() {$('#tabla-stock').dynatable();} );</script>
+{% endblock %}
+{% block title %}Registro de Cotizaciones y Pedidos{% endblock %}
+
+{% block content %}
+<table id="tabla-stock">
+    <thead>
+        <th>ID</th>
+        <th>Proveedor</th>
+        <th>Estado</th>
+        <th>Fecha</th>
+        <th>Total</th>
+        <th>Detalle</th>
+    </thead>
+
+    <tbody>
+    {% if data %}
+      {% for datos in data %}
+        <tr>
+            <td>{{datos.id}}</td>
+            <td>{{datos.partner_id.1}}</td>
+            {% if datos.state == "draft"%}
+            <td><label class="badge badge-warning">Pedido Cotizado</label></td>
+            {% else %}
+            <td><label class="badge badge-success">Pedido Comprado</label></td>
+            {% endif %}
+            <td>{{datos.date_order}}</td>
+            <td>{{datos.amount_total}}</td>
+            <td><a href="dtc/{{datos.id}}" class="btn btn-link btn-rounded btn-fw">Detalle {{pedido.id}}</a></td>
+        </tr>
+
+      {% endfor %}
+
+    {% else %}
+      <p>No hay nada.</p>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}

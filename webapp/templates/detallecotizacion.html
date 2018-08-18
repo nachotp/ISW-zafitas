@@ -1,0 +1,44 @@
+{%  extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Detalle de cotizacion {{idd}}{% endblock %}
+{% block content %}
+
+
+{% for cotizaciones in data %}
+        {% if cotizaciones.id == idd %}
+            <ul>
+                <li>Proveedor:{{cotizaciones.partner_id.1}}</li>
+                <li>Total (IVA inc.):{{cotizaciones.amount_total}}</li>
+            </ul>
+        {% endif %}
+{% endfor %}
+
+<table class="table table-striped">
+    <thead>
+    <th>Producto</th>
+    <th>Descripcion</th>
+    <th>Precio unidad</th>
+    <th>Cantidad</th>
+    <th>Subtotal</th>
+    </thead>
+    <tbody>
+    {% for cotizaciones in data %}
+        {% if cotizaciones.id == idd %}
+            {% for prod in linea %}
+                {% if prod.id in cotizaciones.order_line%}
+                    <tr>
+                        <td>{{prod.product_id.1}}</td>
+                        <td>{{prod.name}}</td>
+                        <td>{{prod.price_unit}}</td>
+                        <td>{{prod.product_qty}}</td>
+                        <td>{{prod.price_subtotal}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

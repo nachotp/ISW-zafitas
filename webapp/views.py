@@ -5,6 +5,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, DetailView, ListView, FormView
 from .models import *
 from .forms import *
+from .odooapi import OdooAPI
 
 
 @method_decorator(login_required, name="dispatch")
@@ -74,6 +75,35 @@ class StockView(ListView):
     template_name = "verstock.html"
 
 
+class CotizacionView(TemplateView):
+    url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
+    template_name = 'cotizacion.html'
+    api = OdooAPI(url, db, username, password)
+
+    def get_context_data(self, **kwargs):
+
+        data = self.api.search_read('purchase.order', [], ['partner_id','state','amount_total','date_order','notes','order_line'])
+        data2 = self.api.search_read('purchase.order.line', [],['name'])
+        context = {'data': data}
+        print(data2)
+        self.api.getInfo()
+        return context
+
+class DetalleCotizacionView(TemplateView):
+    url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
+    template_name = 'detallecotizacion.html'
+    api = OdooAPI(url, db, username, password)
+
+
+    def get_context_data(self, **kwargs):
+        class_id = self.kwargs['id_c']
+        data = self.api.search_read('purchase.order', [], ['partner_id','state','amount_total','date_order','notes','order_line'])
+        data2 = self.api.search_read('purchase.order.line', [], ['product_id','name','price_subtotal','price_unit','product_qty'])
+        context = {'data': data, 'linea': data2,'idd':int(class_id)}
+        print(context)
+        return context
+
+
 @method_decorator(login_required, name="dispatch")
 class AjaxProductosView(ListView):
     http_method_names = ['get', ]
@@ -107,3 +137,5 @@ class AjaxObrasView(ListView):
         data = [{'id': p.id,
                  'nombre': p.ubicacion} for p in queryset]
         return JsonResponse(data, status=200, safe=False)
+
+
