@@ -1,8 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
 from django.utils import timezone
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView, DetailView, ListView, FormView
+from django.views.generic import TemplateView, DetailView, ListView, FormView,CreateView
 from .models import *
 from .forms import *
 from .odooapi import OdooAPI
@@ -57,6 +59,14 @@ class PedidoView(ListView):
     model = Pedido
     template_name = "verpedidos.html"
 
+class RegistroView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registro.html'
+    def get_context_data(self, **kwargs):
+        context = super(RegistroView, self).get_context_data(**kwargs)
+        context['cargos'] = Perfil.cargos
+        return context
 
 class DetallePedidoView(DetailView):
     model = Pedido

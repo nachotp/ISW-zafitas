@@ -13,7 +13,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path("cotizaciones",CotizacionView.as_view(),name="verCotizacion"),
-    re_path(r'^dtc/(?P<id_c>\d+)/$',DetalleCotizacionView.as_view(),name="DetalleCotizacion")
+    re_path(r'^dtc/(?P<id_c>\d+)/$',DetalleCotizacionView.as_view(),name="DetalleCotizacion"),
+    path('registro/', RegistroView.as_view(), name='Registro')
 ]
 # API URLS
 urlpatterns += [
