@@ -5,9 +5,10 @@ from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, DetailView, ListView, FormView
 from .models import *
 from .forms import *
-from django.shortcuts import render
+from .odooapi import OdooAPI
 
 
+@method_decorator(login_required, name="dispatch")
 class IndexView(TemplateView):
     template_name = "base.html"
 
@@ -26,15 +27,16 @@ class SolicitudView(FormView):
         if self.request.POST:
             datos = ProdEnPedidoFormSet(self.request.POST)
             if datos.is_valid():
-                maxforms = int(self.request.POST['form-TOTAL_FORMS'][0])
-                obra = int(self.request.POST['form-0-obra'][0])
+                maxforms = int(self.request.POST['form-TOTAL_FORMS'])
+                obra = int(self.request.POST['form-0-obra'])
+                comentario = self.request.POST['comentario']
                 pedido = Pedido.objects.create(obra=Obra.objects.get(id=obra),
                                                usuario=self.request.user,
                                                fecha=timezone.now(),
-                                               comentario="Funciona!")
+                                               comentario=comentario)
                 for i in range(maxforms):
-                    prod = int(self.request.POST['form-{0}-producto'.format(i)][0])
-                    cant = int(self.request.POST['form-{0}-cantidad'.format(i)][0])
+                    prod = int(self.request.POST['form-{0}-producto'.format(i)])
+                    cant = int(self.request.POST['form-{0}-cantidad'.format(i)])
                     ProductoEnPedido.objects.create(idPedido=pedido,
                                                     idProducto=Producto.objects.get(id=prod),
                                                     cantidad=cant)
@@ -50,6 +52,7 @@ class SolicitudView(FormView):
         print(context)
         return super(SolicitudView, self).form_valid(form)
 
+
 class PedidoView(ListView):
     model = Pedido
     template_name = "verpedidos.html"
@@ -58,16 +61,47 @@ class PedidoView(ListView):
 class DetallePedidoView(DetailView):
     model = Pedido
     template_name = "detallepedido.html"
+
     def get_context_data(self, **kwargs):
         context = super(DetallePedidoView, self).get_context_data(**kwargs)
         context['productos'] = Producto.objects.all()
         context['prodenpedidos'] = ProductoEnPedido.objects.all()
         return context
 
+
 class StockView(ListView):
     model = ProductoEnBodega
     context_object_name = 'productos_en_bodega'
     template_name = "verstock.html"
+
+
+class CotizacionView(TemplateView):
+    url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
+    template_name = 'cotizacion.html'
+    api = OdooAPI(url, db, username, password)
+
+    def get_context_data(self, **kwargs):
+
+        data = self.api.search_read('purchase.order', [], ['partner_id','state','amount_total','date_order','notes','order_line'])
+        data2 = self.api.search_read('purchase.order.line', [],['name'])
+        context = {'data': data}
+        print(data2)
+        self.api.getInfo()
+        return context
+
+class DetalleCotizacionView(TemplateView):
+    url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
+    template_name = 'detallecotizacion.html'
+    api = OdooAPI(url, db, username, password)
+
+
+    def get_context_data(self, **kwargs):
+        class_id = self.kwargs['id_c']
+        data = self.api.search_read('purchase.order', [], ['partner_id','state','amount_total','date_order','notes','order_line'])
+        data2 = self.api.search_read('purchase.order.line', [], ['product_id','name','price_subtotal','price_unit','product_qty'])
+        context = {'data': data, 'linea': data2,'idd':int(class_id)}
+        print(context)
+        return context
 
 
 @method_decorator(login_required, name="dispatch")
@@ -103,3 +137,5 @@ class AjaxObrasView(ListView):
         data = [{'id': p.id,
                  'nombre': p.ubicacion} for p in queryset]
         return JsonResponse(data, status=200, safe=False)
+
+

@@ -19,6 +19,11 @@ Tras esto se puede ir a localhost:8000/ y probar las opciones implementadas:
 * Ver Solicitudes
 * Stock Productos
 
+## Odoo ERP:
+* user: isw.zafitas@gmail.com
+* pass: iswgpi123
+En la seccion de compras se pueden ver la cotizaciones realizadas, pedidos y facturas
+
 ## Administración
 Para hacer commit de cambios en modelo de datos:
 ```bash

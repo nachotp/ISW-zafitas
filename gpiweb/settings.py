@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MEDIA_ROOT = BASE_DIR+"/media/"
 MEDIA_URL = "media/"
-LOGIN_URL = "/login/"
+LOGIN_URL = "/accounts/login"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = LOGIN_URL
 # Quick-start development settings - unsuitable for production
