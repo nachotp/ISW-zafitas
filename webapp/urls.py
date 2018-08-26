@@ -12,8 +12,9 @@ urlpatterns = [
     path('detalle/<pk>', DetallePedidoView.as_view(), name='DetallePedido'),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path("cotizaciones",CotizacionView.as_view(),name="verCotizacion"),
-    re_path(r'^dtc/(?P<id_c>\d+)/$',DetalleCotizacionView.as_view(),name="DetalleCotizacion"),
+    path("cotizaciones",CotizacionView.as_view(), name="verCotizacion"),
+    re_path(r'^dtc/(?P<id_c>\d+)/$', DetalleCotizacionView.as_view(), name="DetalleCotizacion"),
+    path('cruzarpedido/<pk>/', CruzarPedidoView.as_view(), name="cruzarstock"),
     path('registro/', RegistroView.as_view(), name='Registro')
 ]
 # API URLS

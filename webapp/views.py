@@ -15,6 +15,10 @@ class IndexView(TemplateView):
     template_name = "base.html"
 
 
+class CruzarPedidoView(TemplateView):
+    template_name = "base.html"
+
+
 class ProductView(DetailView):
     model = Producto
     template_name = "verproductos.html"
