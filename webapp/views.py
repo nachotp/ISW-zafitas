@@ -18,6 +18,8 @@ class IndexView(TemplateView):
 class CruzarPedidoView(DetailView):
     model = Pedido
     template_name = "cruzarstock.html"
+    url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
+    api = OdooAPI(url, db, username, password)
 
     def get_context_data(self, **kwargs):
         context = super(CruzarPedidoView, self).get_context_data(**kwargs)
@@ -29,7 +31,14 @@ class CruzarPedidoView(DetailView):
             cant = enstock - pep.cantidad
             falta = 1 if cant < 0 else 0
             stock.append((pep.idProducto.id, name, pep.cantidad, enstock, abs(cant), falta))
+
+        if self.request.POST:
+            print('hola')
+            self.api.create('purchase.order',{'partner_id':[7, 'Homecenter '], 'order_line': [6]})
         context['stock'] = stock
+
+
+
         return context
 
 
@@ -115,9 +124,11 @@ class CotizacionView(TemplateView):
         data = self.api.search_read('purchase.order', [], ['partner_id','state','amount_total','date_order','notes','order_line'])
         data2 = self.api.search_read('purchase.order.line', [],['name'])
         context = {'data': data}
-        print(data2)
+        print(data)
         self.api.getInfo()
         return context
+
+
 
 
 class DetalleCotizacionView(TemplateView):
