@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 import datetime
 
 
@@ -107,21 +109,3 @@ class Perfil(models.Model):
     BODEGUERO = "BG"
     cargos = ((PERSONAL_OBRA, "Personal de obra"), (ENCARGADO_COMPRA, "Encargado de Compras"), (BODEGUERO, "Bodeguero"))
     cargo = models.CharField(max_length=2, choices=cargos, default=PERSONAL_OBRA, verbose_name="Cargo")
-
-    class Meta:
-        verbose_name = 'perfil'
-        verbose_name_plural = 'perfiles'
-
-    def __str__(self):
-        return self.nombre + " - " + self.cargo
-
-    '''
-    @receiver(post_save, sender=User)
-    def crear_perfil(sender, instance, created, **kwargs):
-        if created:
-            Perfil.objects.create(usuario=instance)
-
-    @receiver(post_save, sender=User)
-    def guardar_perfil(sender, instance, **kwargs):
-        instance.profile.save()
-    '''
