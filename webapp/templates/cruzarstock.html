@@ -28,7 +28,7 @@
 <div class="card">
 <h2>Realizar solicitud de compra</h2>
 <p>Esto enviará una solicitud para realizar una cotización de los productos requeridos que no están en stock.</p>
-<form method="post">
+<form method="post" action="{% url 'cruzarstock' object.id %}">
 {% csrf_token %}
 <table class="table table-striped">
     <thead>
@@ -41,8 +41,8 @@
         <tr>
             <td>{{nombre}} <input type="hidden" name="prodid-{{ forloop.counter }}" value="{{ id }}"></td>
             <td>{{cant}} <input type="hidden" name="prodcant-{{ forloop.counter }}" value="{{ cant }}"></td>
-            {% endif %}
         </tr>
+        {% endif %}
     {% endfor %}
     </tbody>
 </table>
