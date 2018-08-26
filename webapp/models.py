@@ -22,7 +22,7 @@ class Bodega(models.Model):
     ubicacion = models.CharField(max_length=100, verbose_name="Ubicacion")
 
     def __str__(self):
-        return "Ubicacion: " + self.ubicacion
+        return self.ubicacion
 
     class Meta:
         verbose_name = 'bodega'
@@ -33,6 +33,13 @@ class ProductoEnBodega(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     idBodega = models.ForeignKey(Bodega, on_delete=models.CASCADE)
     cantidad = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.cantidad) + " " + self.idProducto.nombre + " en " + str(self.idBodega)
+
+    class Meta:
+        verbose_name = 'bodega'
+        verbose_name_plural = 'bodegas'
 
 
 '''

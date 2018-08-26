@@ -15,8 +15,22 @@ class IndexView(TemplateView):
     template_name = "base.html"
 
 
-class CruzarPedidoView(TemplateView):
-    template_name = "base.html"
+class CruzarPedidoView(DetailView):
+    model = Pedido
+    template_name = "cruzarstock.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(CruzarPedidoView, self).get_context_data(**kwargs)
+        prodenpedidos = ProductoEnPedido.objects.filter(idPedido=context['object'].id)
+        stock = []
+        for pep in prodenpedidos:
+            name = pep.idProducto.nombre
+            enstock = ProductoEnBodega.objects.get(idProducto=pep.idProducto).cantidad
+            cant = enstock - pep.cantidad
+            falta = 1 if cant < 0 else 0
+            stock.append((pep.idProducto.id, name, pep.cantidad, enstock, abs(cant), falta))
+        context['stock'] = stock
+        return context
 
 
 class ProductView(DetailView):
@@ -63,14 +77,17 @@ class PedidoView(ListView):
     model = Pedido
     template_name = "verpedidos.html"
 
+
 class RegistroView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registro.html'
+
     def get_context_data(self, **kwargs):
         context = super(RegistroView, self).get_context_data(**kwargs)
         context['cargos'] = Perfil.cargos
         return context
+
 
 class DetallePedidoView(DetailView):
     model = Pedido
@@ -78,8 +95,7 @@ class DetallePedidoView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(DetallePedidoView, self).get_context_data(**kwargs)
-        context['productos'] = Producto.objects.all()
-        context['prodenpedidos'] = ProductoEnPedido.objects.all()
+        context['prodenpedidos'] = ProductoEnPedido.objects.filter(idPedido=context['object'].id)
         return context
 
 
@@ -103,11 +119,11 @@ class CotizacionView(TemplateView):
         self.api.getInfo()
         return context
 
+
 class DetalleCotizacionView(TemplateView):
     url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
     template_name = 'detallecotizacion.html'
     api = OdooAPI(url, db, username, password)
-
 
     def get_context_data(self, **kwargs):
         class_id = self.kwargs['id_c']

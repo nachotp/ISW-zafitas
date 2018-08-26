@@ -1,27 +1,53 @@
 {%  extends "base.html" %}
 {% load staticfiles %}
-{% block title %}Disponibilidad de Stock:{% endblock %}
+{% block title %}Disponibilidad de Stock para pedido #{{ object.id }}{% endblock %}
 {% block content %}
 <table class="table table-striped">
     <thead>
     <th>Producto</th>
-    <th>Cantidad</th>
+    <th>Solicitado</th>
+    <th>En Stock</th>
+    <th>Disponibilidad</th>
     </thead>
     <tbody>
-    {% for pep in prodenpedidos %}
-        {% if pep.idPedido_id == object.id %}
-            {% for prod in productos %}
-                {% if prod.id == pep.idProducto_id%}
-                    <tr>
-                    <td>{{prod.nombre}}</td>
-                    <td>{{pep.cantidad}}</td>
-                    </tr>
-                {% endif %}
-            {% endfor %}
+    {% for _, nombre, soli, enstock, cant, falta in stock %}
+        <tr>
+        <td>{{nombre}}</td>
+        <td>{{soli}}</td>
+        <td>{{enstock}}</td>
+        {% if falta %}
+            <td><i class="mdi mdi-close-outline" style="color: red"></i> Faltan {{cant}} unidades</td>
+        {% else %}
+            <td><i class="mdi mdi-check-outline" style="color: green "></i> {{soli}} unidades disponibles</td>
         {% endif %}
+        </tr>
     {% endfor %}
     </tbody>
 </table>
-
-<a href="{%  url 'cruzarstock' object.id%}+/"></a>
+<br><br>
+<div class="card">
+<h2>Realizar solicitud de compra</h2>
+<p>Esto enviará una solicitud para realizar una cotización de los productos requeridos que no están en stock.</p>
+<form method="post">
+{% csrf_token %}
+<table class="table table-striped">
+    <thead>
+    <th>Producto</th>
+    <th>Cantidad a solicitar</th>
+    </thead>
+    <tbody>
+    {% for id, nombre, _, _, cant, falta in stock %}
+        {% if falta %}
+        <tr>
+            <td>{{nombre}} <input type="hidden" name="prodid-{{ forloop.counter }}" value="{{ id }}"></td>
+            <td>{{cant}} <input type="hidden" name="prodcant-{{ forloop.counter }}" value="{{ cant }}"></td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<input type="submit" class="btn btn-block btn-primary btn-lg" value="Enviar solicitud de compra">
+</form>
+</div>
 {% endblock %}

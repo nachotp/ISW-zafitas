@@ -9,19 +9,13 @@
     </thead>
     <tbody>
     {% for pep in prodenpedidos %}
-        {% if pep.idPedido_id == object.id %}
-            {% for prod in productos %}
-                {% if prod.id == pep.idProducto_id%}
-                    <tr>
-                    <td>{{prod.nombre}}</td>
-                    <td>{{pep.cantidad}}</td>
-                    </tr>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
+        <tr>
+        <td>{{pep.idProducto.nombre}}</td>
+        <td>{{pep.cantidad}}</td>
+        </tr>
     {% endfor %}
     </tbody>
 </table>
 
-<a href="{%  url 'cruzarstock' object.id%}+/"></a>
+<a href="{%  url 'cruzarstock' object.id%}" class="btn btn-block btn-behance">Revisar Stock y Emitir</a>
 {% endblock %}
