@@ -1,23 +1,38 @@
+{%  extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}Registro de usuarios{% endblock %}
 {% block content %}
-  <h2>Sign up</h2>
+<p>Desde aquí puedes crear nuevos usuarios para los miembros de GPI.</p>
   <form method="post">
     {% csrf_token %}
-    {% for field in form %}
       <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
+        Usuario<br>
+        {{ form.username  | add_class:"form-control cant" }}
       </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
+      <p>
+        Nombre<br>
+        {{ form.nombre  | add_class:"form-control cant" }}
+      </p>
+      <p>
+        RUT<br>
+        {{ form.rut  | add_class:"form-control cant" }}
+      </p>
+      <p>
+        Cargo<br>
+        {{ form.cargo  | add_class:"form-control cant" }}
+      </p>
+      <p>
+          Contraseña<br>
+        {{ form.password  | add_class:"form-control cant" }}
+      </p>
+      <p>
+        Confirmar contraseña<br>
+        {{ form.confirm_password  | add_class:"form-control cant" }}
+      </p>
+    <button type="submit" class="btn btn-block btn-primary btn-lg">Crear Usuario</button>
   </form>
 {% endblock %}
-
 
 
 
