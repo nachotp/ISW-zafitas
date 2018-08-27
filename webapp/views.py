@@ -15,7 +15,7 @@ class IndexView(TemplateView):
     template_name = "base.html"
 
 
-class CruzarPedidoView(DetailView):
+class CruzarPedidoView(TemplateView):
     model = Pedido
     template_name = "cruzarstock.html"
     url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
@@ -23,6 +23,7 @@ class CruzarPedidoView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CruzarPedidoView, self).get_context_data(**kwargs)
+        context['object'] = Pedido.objects.get(id=self.kwargs['pk'])
         prodenpedidos = ProductoEnPedido.objects.filter(idPedido=context['object'].id)
         stock = []
         for pep in prodenpedidos:
@@ -32,15 +33,29 @@ class CruzarPedidoView(DetailView):
             falta = 1 if cant < 0 else 0
             stock.append((pep.idProducto.id, name, pep.cantidad, enstock, abs(cant), falta))
 
-        if self.request.POST:
-            print('hola')
-            self.api.create('purchase.order',{'partner_id':[7, 'Homecenter '], 'order_line': [6]})
         context['stock'] = stock
-
-
+        def post(self, request, *args, **kwargs):
+            context = self.get_context_data()
+            data = self.request.POST
+            cantprods = int(len(data)/2)
+            requestlist = []
+            for i in range(cantprods):
+                requestlist.append({'id': int(data['prodid-'+str(i+1)]),
+                                    'name': Producto.objects.get(pk=data['prodid-'+str(i+1)]).nombre,
+                                    'cantidad': int(data['prodcant-'+str(i+1)])
+                                    })
+            print(requestlist)
+            # MONSE
+            # HAS
+            # TU
+            # MAGIA
+            # ACA
+            # 💕❤😘
+            print('hola')
+            self.api.create('purchase.order', {'partner_id': [7, 'Homecenter '], 'order_line': [6]})
+            return super(TemplateView, self).render_to_response(context)
 
         return context
-
 
 class ProductView(DetailView):
     model = Producto
@@ -178,5 +193,3 @@ class AjaxObrasView(ListView):
         data = [{'id': p.id,
                  'nombre': p.ubicacion} for p in queryset]
         return JsonResponse(data, status=200, safe=False)
-
-
