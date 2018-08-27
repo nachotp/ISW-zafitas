@@ -30,8 +30,8 @@ class OdooAPI:
             id = self.models.execute_kw(self.db, self.uid, self.password, model_name, 'create', [values])
             return id
         except:
-            return "Not Inserted!"
-            models.execute_kw(db, uid, password, 'res.partner', 'unlink', [[7]])
+            print( "Not Inserted!")
+            self.models.execute_kw(self.db, self.uid, self.password, 'res.partner', 'unlink', [[7]])
 
     def delete(self, model_name, ids):
         try:
@@ -44,7 +44,7 @@ class OdooAPI:
     def update(self, model_name, ids, values):
         try:
             self.connect()
-            self.models.execute_kw(self.db, self.uid, self.password, model_name, 'write', [ids, values])
+            print(self.models.execute_kw(self.db, self.uid, self.password, model_name, 'write', [ids, values]))
             return "Updated"
         except:
             return "Not Updated!"

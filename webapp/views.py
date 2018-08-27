@@ -8,6 +8,7 @@ from django.views.generic import TemplateView, DetailView, ListView, FormView,Cr
 from .models import *
 from .forms import *
 from .odooapi import OdooAPI
+import datetime
 
 
 @method_decorator(login_required, name="dispatch")
@@ -32,30 +33,49 @@ class CruzarPedidoView(TemplateView):
             cant = enstock - pep.cantidad
             falta = 1 if cant < 0 else 0
             stock.append((pep.idProducto.id, name, pep.cantidad, enstock, abs(cant), falta))
-
-        context['stock'] = stock
-        def post(self, request, *args, **kwargs):
+            context['stock'] = stock
+            return context
+    def post(self, request, *args, **kwargs):
             context = self.get_context_data()
             data = self.request.POST
             cantprods = int(len(data)/2)
             requestlist = []
+            cant_real=context['stock'][0][3]
+            print(cant_real)
             for i in range(cantprods):
-                requestlist.append({'id': int(data['prodid-'+str(i+1)]),
-                                    'name': Producto.objects.get(pk=data['prodid-'+str(i+1)]).nombre,
-                                    'cantidad': int(data['prodcant-'+str(i+1)])
+                requestlist.append({'name': Producto.objects.get(pk=data['prodid-'+str(i+1)]).nombre,
+                                    'virtual_avaible': int(data['prodcant-'+str(i+1)])+cant_real,
+                                    'qty_avaible':cant_real
                                     })
             print(requestlist)
-            # MONSE
-            # HAS
-            # TU
-            # MAGIA
-            # ACA
-            # 💕❤😘
-            print('hola')
-            self.api.create('purchase.order', {'partner_id': [7, 'Homecenter '], 'order_line': [6]})
+
+            ids=[]
+            now=datetime.datetime.now()
+
+            id_linea=0
+            new={}
+            lineas=[]
+            for request in requestlist:
+                id = self.api.create("product.template", request)
+                new['name']=request['name']
+                new["date_planned"]=str(now)
+                new["product_uom"]=1
+                new["product_id"]=id
+                new['price_unit']=0.0
+                #request["order_id"]=id_orden
+                new["product_qty"]=request["virtual_avaible"]
+                print(request)
+                lineas.append((id_linea,False,new))
+                #self.api.create("stock.change.product.qty", {"product_id":id,"new_quantity":request['qty_avaible']})
+                ids.append(id)
+                print(ids)
+            print(lineas)
+
+            id_orden = self.api.create('purchase.order', {"partner_id": 9, 'order_line':lineas})
+            print(id_orden)
             return super(TemplateView, self).render_to_response(context)
 
-        return context
+
 
 class ProductView(DetailView):
     model = Producto
@@ -154,7 +174,7 @@ class DetalleCotizacionView(TemplateView):
     def get_context_data(self, **kwargs):
         class_id = self.kwargs['id_c']
         data = self.api.search_read('purchase.order', [], ['partner_id','state','amount_total','date_order','notes','order_line'])
-        data2 = self.api.search_read('purchase.order.line', [], ['product_id','name','price_subtotal','price_unit','product_qty'])
+        data2 = self.api.search_read('purchase.order.line', [], ['product_id','name','price_subtotal','price_unit','product_qty','product_uom'])
         context = {'data': data, 'linea': data2,'idd':int(class_id)}
         print(context)
         return context
