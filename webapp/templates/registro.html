@@ -1,44 +1,38 @@
-<!-- templates/signup.html -->
-{% extends 'base.html' %}
+{%  extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}Registro de usuarios{% endblock %}
 {% block content %}
-<div class="auth-form-light text-left p-3">
-                <h2>Registrar usuario</h2>
-                <h4 class="font-weight-light">Debes completar todos los campos para crear un nuevo usuario.</h4>
-                <form class="pt-4">
-                  <form method="post">
-                      {% csrf_token %}
-                    <div class="form-group">
-                      <label>Nombre de usuario</label>
-                      <input type="text" class="form-control" id="usuario " placeholder="Username">
-                    </div>
-                      <div class="form-group">
-                      <label>Nombre</label>
-                      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                    </div>
-                      <div class="form-group">
-                      <label>RUT</label>
-                      <input type="text" class="form-control" id="rut" placeholder="Rut de la persona">
-                    </div>
-                      <div class="form-group">
-                      <label>Cargo en GPI</label>
-                          <select class="form-control" id="cargo">
-                              {% for abrev, cargo in cargos %}
-                              <option value={{abrev}}>{{cargo}}</option>
-                              {% endfor %}
-                            </select>
-                    </div>
-                    <div class="mt-5">
-                        <input type="submit" class="btn btn-block btn-success btn-lg font-weight-medium" value = "Registrar">
-                    </div>
-                  </form>
-                </form>
-              </div>
+<p>Desde aquí puedes crear nuevos usuarios para los miembros de GPI.</p>
+  <form method="post">
+    {% csrf_token %}
+      <p>
+        Usuario<br>
+        {{ form.username  | add_class:"form-control cant" }}
+      </p>
+      <p>
+        Nombre<br>
+        {{ form.nombre  | add_class:"form-control cant" }}
+      </p>
+      <p>
+        RUT<br>
+        {{ form.rut  | add_class:"form-control cant" }}
+      </p>
+      <p>
+        Cargo<br>
+        {{ form.cargo  | add_class:"form-control cant" }}
+      </p>
+      <p>
+          Contraseña<br>
+        {{ form.password  | add_class:"form-control cant" }}
+      </p>
+      <p>
+        Confirmar contraseña<br>
+        {{ form.confirm_password  | add_class:"form-control cant" }}
+      </p>
+    <button type="submit" class="btn btn-block btn-primary btn-lg">Crear Usuario</button>
+  </form>
 {% endblock %}
-
-
-
-
-
 
 
 
