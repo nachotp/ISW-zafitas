@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
 from django.utils import timezone
+from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, DetailView, ListView, FormView,CreateView
 from .models import *
@@ -124,12 +124,25 @@ class PedidoView(ListView):
 
 class RegistroView(CreateView):
     form_class = UserCreationForm
-    success_url = reverse_lazy('login')
     template_name = 'registro.html'
 
     def get_context_data(self, **kwargs):
         context = super(RegistroView, self).get_context_data(**kwargs)
-        context['cargos'] = Perfil.cargos
+        if self.request.method == 'POST':
+            form = UserRegistrationForm(self.request.POST)
+            if form.is_valid():
+                username = form.cleaned_data.get('username')
+                password = form.cleaned_data.get('password')
+                cargo = form.cleaned_data.get('cargo')
+                rut = form.cleaned_data.get('rut')
+                nombre = form.cleaned_data.get('nombre')
+                user = User.objects.create_user(username, '', password)
+                perfil = Perfil.objects.create(usuario_id=user.id,rut=rut,nombre=nombre,cargo=cargo)
+                perfil.save()
+                user.save()
+        else:
+            form = UserRegistrationForm()
+        context['form'] = form
         return context
 
 
