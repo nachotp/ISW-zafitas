@@ -93,38 +93,51 @@
             <li class="nav-item nav-category">
               <span class="nav-link">GENERAL</span>
             </li>
+          {% if user.perfil.cargo != 'EC' and user.perfil.cargo != 'BG' and user.perfil.cargo != 'PO'%}
               <li class="nav-item">
               <a class="nav-link" href="{% url "Registro" %}">
                 <span class="menu-title">Crear Usuario</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
             </li>
+                        {% endif %}
+
+              {% if user.perfil.cargo != 'EC' and user.perfil.cargo != 'BG'%}
             <li class="nav-item">
               <a class="nav-link" href="{% url "Solicitud" %}">
                 <span class="menu-title">Crear Solicitud</span>
                 <i class="icon-grid menu-icon"></i>
               </a>
             </li>
+              {% endif %}
+              {% if user.perfil.cargo != 'EC'%}
              <li class="nav-item">
               <a class="nav-link" href="{% url "verPedidos" %}">
                 <span class="menu-title">Ver Solicitudes</span>
                 <i class="icon-layers menu-icon"></i>
               </a>
             </li>
+          {% endif %}
+            {% if user.perfil.cargo != 'EC' and user.perfil.cargo != 'PO'%}
             <li class="nav-item">
               <a class="nav-link" href="{% url "verStock" %}">
                 <span class="menu-title">Stock Productos</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
             </li>
+          {% endif %}
+              {% if user.perfil.cargo != 'PO' and user.perfil.cargo != 'BG'%}
+
               <li class="nav-item">
               <a class="nav-link" href="{% url "verCotizacion" %}">
                 <span class="menu-title">Ver Cotizaciones</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
             </li>
+                    {% endif %}
+
           </ul>
-        </nav>
+        </nav>  z
         <!-- partial -->
         <div class="content-wrapper">
             <div class="row">

@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
-from django.shortcuts import render
+from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, DetailView, ListView, FormView,CreateView
 from .models import *
@@ -112,6 +112,11 @@ class SolicitudView(FormView):
             data['productos'] = ProdEnPedidoFormSet()
         return data
 
+    def render_to_response(self, context):
+        if (self.request.user.perfil.cargo == 'BG' or self.request.user.perfil.cargo == 'EC'):
+            return redirect('index')
+        return super(SolicitudView, self).render_to_response(context)
+
     def form_valid(self, form):
         context = self.get_context_data()
         print(context)
@@ -121,12 +126,15 @@ class SolicitudView(FormView):
 class PedidoView(ListView):
     model = Pedido
     template_name = "verpedidos.html"
+    def render_to_response(self, context):
+        if (self.request.user.perfil.cargo == 'EC'):
+            return redirect('index')
+        return super(PedidoView, self).render_to_response(context)
 
 
 class RegistroView(CreateView):
     form_class = UserCreationForm
     template_name = 'registro.html'
-
     def get_context_data(self, **kwargs):
         context = super(RegistroView, self).get_context_data(**kwargs)
         if self.request.method == 'POST':
@@ -145,28 +153,39 @@ class RegistroView(CreateView):
             form = UserRegistrationForm()
         context['form'] = form
         return context
-
+    def render_to_response(self, context):
+        if (self.request.user.perfil.cargo == 'BG' or self.request.user.perfil.cargo == 'PO'or self.request.user.perfil.cargo == 'EC'):
+            return redirect('index')
+        return super(RegistroView, self).render_to_response(context)
 
 class DetallePedidoView(DetailView):
     model = Pedido
     template_name = "detallepedido.html"
-
     def get_context_data(self, **kwargs):
         context = super(DetallePedidoView, self).get_context_data(**kwargs)
         context['prodenpedidos'] = ProductoEnPedido.objects.filter(idPedido=context['object'].id)
         return context
 
+    def render_to_response(self, context):
+        if (self.request.user.perfil.cargo == 'EC'):
+            return redirect('index')
+        return super(DetallePedidoView, self).render_to_response(context)
 
 class StockView(ListView):
     model = ProductoEnBodega
     context_object_name = 'productos_en_bodega'
     template_name = "verstock.html"
 
+    def render_to_response(self, context):
+        if (self.request.user.perfil.cargo == 'EC' or self.request.user.perfil.cargo == 'PO'):
+            return redirect('index')
+        return super(StockView, self).render_to_response(context)
 
 class CotizacionView(TemplateView):
     url, db, username, password = 'https://gpi-isw.odoo.com', 'gpi-isw', 'isw.zafitas@gmail.com', 'iswgpi123'
     template_name = 'cotizacion.html'
     api = OdooAPI(url, db, username, password)
+
 
     def get_context_data(self, **kwargs):
 
@@ -177,7 +196,10 @@ class CotizacionView(TemplateView):
         self.api.getInfo()
         return context
 
-
+    def render_to_response(self, context):
+        if (self.request.user.perfil.cargo == 'BG' or self.request.user.perfil.cargo == 'PO'):
+            return redirect('index')
+        return super(CotizacionView, self).render_to_response(context)
 
 
 class DetalleCotizacionView(TemplateView):
@@ -193,7 +215,10 @@ class DetalleCotizacionView(TemplateView):
         print(context)
         return context
 
-
+    def render_to_response(self, context):
+        if (self.request.user.perfil.cargo == 'BG' or self.request.user.perfil.cargo == 'PO'):
+            return redirect('index')
+        return super(DetalleCotizacionView, self).render_to_response(context)
 @method_decorator(login_required, name="dispatch")
 class AjaxProductosView(ListView):
     http_method_names = ['get', ]
