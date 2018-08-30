@@ -107,5 +107,6 @@ class Perfil(models.Model):
     PERSONAL_OBRA = "PO"
     ENCARGADO_COMPRA = "EC"
     BODEGUERO = "BG"
-    cargos = ((PERSONAL_OBRA, "Personal de obra"), (ENCARGADO_COMPRA, "Encargado de Compras"), (BODEGUERO, "Bodeguero"))
+    ADMIN = "AD"
+    cargos = ((PERSONAL_OBRA, "Personal de obra"), (ENCARGADO_COMPRA, "Encargado de Compras"), (BODEGUERO, "Bodeguero"), (ADMIN, "Admin"))
     cargo = models.CharField(max_length=2, choices=cargos, default=PERSONAL_OBRA, verbose_name="Cargo")
