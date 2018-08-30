@@ -25,6 +25,24 @@ Tras esto se puede ir a localhost:8000/ y probar las opciones implementadas:
 * pass: iswgpi123
 En la seccion de compras se pueden ver la cotizaciones realizadas, pedidos y facturas
 
+## Perfiles
+* Para ver las vistas especificas para cada perfil, se han creado los siguientes usuarios>
+*
+User: bodeguero
+Password: asd
+Cargo: Bodeguero
+*
+User: ec
+Password: asd
+Cargo: Encargado de Compras
+*
+User: po
+Password: asd
+Cargo: Personal de Obra
+*
+User: ayudante
+Password: ayudanteisw
+Cargo: Admin
 ## Administración
 Para hacer commit de cambios en modelo de datos:
 ```bash
