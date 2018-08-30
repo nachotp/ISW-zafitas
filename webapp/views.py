@@ -77,6 +77,7 @@ class CruzarPedidoView(TemplateView):
 
 
 
+
 class ProductView(DetailView):
     model = Producto
     template_name = "verproductos.html"

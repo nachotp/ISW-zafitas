@@ -16,9 +16,10 @@ Luego entrar a localhost:8000/admin e iniciar sesión con:
 
 Tras esto se puede ir a localhost:8000/ y probar las opciones implementadas:
 * Crear Solicitud
-* Ver Solicitudes
+* Ver Solicitudes: Se puede ver el detalle de un pedido y cruzar stock dentro de la vista de detalle del pedido.
 * Stock Productos
-
+* Crear usuario
+* Ver cotizaciones
 ## Odoo ERP:
 * user: isw.zafitas@gmail.com
 * pass: iswgpi123
