@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="66cm" height="38cm" viewBox="180 -2433 1317 759" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="1100.21" y="-1957.64" width="79.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1100.21" y="-1957.64" width="79.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1139.86" y="-1937.64">USER</text>
+    <rect style="fill: #ffffff" x="1100.21" y="-1929.64" width="79.3" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1100.21" y="-1929.64" width="79.3" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1103.21" y="-1916.44">+id: pk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1103.21" y="-1900.44">+username</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1103.21" y="-1884.44">+password</text>
+    <rect style="fill: #ffffff" x="1100.21" y="-1877.64" width="79.3" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1100.21" y="-1877.64" width="79.3" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="880.058" y="-2115.56" width="87" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880.058" y="-2115.56" width="87" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="923.558" y="-2095.56">OBRA</text>
+    <rect style="fill: #ffffff" x="880.058" y="-2087.56" width="87" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880.058" y="-2087.56" width="87" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="883.058" y="-2074.36">+id: pk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="883.058" y="-2058.36">+ubicación</text>
+    <rect style="fill: #ffffff" x="880.058" y="-2051.56" width="87" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880.058" y="-2051.56" width="87" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="892.316" y="-1924.75" width="148.75" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="892.316" y="-1924.75" width="148.75" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="966.691" y="-1904.75">ORDEN_COMPRA</text>
+    <rect style="fill: #ffffff" x="892.316" y="-1896.75" width="148.75" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="892.316" y="-1896.75" width="148.75" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="895.316" y="-1883.55">+cantidad</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="895.316" y="-1867.55">+fecha</text>
+    <rect style="fill: #ffffff" x="892.316" y="-1860.75" width="148.75" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="892.316" y="-1860.75" width="148.75" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="761.681" y="-2120.84" width="94.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="761.681" y="-2120.84" width="94.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="809.031" y="-2100.84">PEDIDO</text>
+    <rect style="fill: #ffffff" x="761.681" y="-2092.84" width="94.7" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="761.681" y="-2092.84" width="94.7" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="764.681" y="-2079.64">+id: pk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="764.681" y="-2063.64">+fecha</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="764.681" y="-2047.64">+estado</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="764.681" y="-2031.64">+user: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="764.681" y="-2015.64">+idObra: fk</text>
+    <rect style="fill: #ffffff" x="761.681" y="-2008.84" width="94.7" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="761.681" y="-2008.84" width="94.7" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="887.21" y="-1790.01" width="114.55" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="887.21" y="-1790.01" width="114.55" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="944.485" y="-1770.01">COTIZACION</text>
+    <rect style="fill: #ffffff" x="887.21" y="-1762.01" width="114.55" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="887.21" y="-1762.01" width="114.55" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.21" y="-1748.81">+id: pk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="890.21" y="-1732.81">+idPedido: fk</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="689.351" y="-1958.98" width="102.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="689.351" y="-1958.98" width="102.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="740.551" y="-1938.98">PRODUCTO</text>
+    <rect style="fill: #ffffff" x="689.351" y="-1930.98" width="102.4" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="689.351" y="-1930.98" width="102.4" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="692.351" y="-1917.78">+nombre</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="692.351" y="-1901.78">+marca</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="692.351" y="-1885.78">+descripcion</text>
+    <rect style="fill: #ffffff" x="689.351" y="-1878.98" width="102.4" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="689.351" y="-1878.98" width="102.4" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="809.031,-2000.84 809.031,-1943.64 1100.21,-1943.64 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="954.62" y="-1947.64">realiza</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="813.031" y="-1988.84">1..*</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1096.21" y="-1947.64">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="689.351,-1920.98 661.28,-1920.98 661.28,-1841.97 596.323,-1841.97 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="663.28" y="-1885.47"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="685.351" y="-1924.98">1..*</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="600.323" y="-1845.97">1..*</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="740.551,-1870.98 740.551,-1838.71 740.142,-1838.71 740.142,-1806.43 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="740.346" y="-1842.71"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="744.551" y="-1858.98">1..*</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="744.142" y="-1810.43">0..*</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="791.751,-1888.98 841.529,-1888.98 841.529,-1888.75 891.307,-1888.75 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="843.529" y="-1892.86"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="795.751" y="-1892.98">1..*</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="887.307" y="-1892.75">0..*</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1278.2" y="-1957.64" width="102.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1278.2" y="-1957.64" width="102.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1329.4" y="-1937.64">Perfil</text>
+    <rect style="fill: #ffffff" x="1278.2" y="-1929.64" width="102.4" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1278.2" y="-1929.64" width="102.4" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1281.2" y="-1916.44">+id: pk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1281.2" y="-1900.44">+usuario: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1281.2" y="-1884.44">+cargo</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1281.2" y="-1868.44">+nombre</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1281.2" y="-1852.44">+rut</text>
+    <rect style="fill: #ffffff" x="1278.2" y="-1845.64" width="102.4" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1278.2" y="-1845.64" width="102.4" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1278.2,-1919.64 1212.91,-1919.64 1212.91,-1919.64 1179.51,-1919.64 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1214.91" y="-1923.64">tiene</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1274.2" y="-1923.64">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1183.51" y="-1923.64">1</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="598.424" y="-2431.78" width="119.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="598.424" y="-2431.78" width="119.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="658.124" y="-2411.78">SolicitudView</text>
+    <rect style="fill: #ffffff" x="598.424" y="-2403.78" width="119.4" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="598.424" y="-2403.78" width="119.4" height="8"/>
+    <rect style="fill: #ffffff" x="598.424" y="-2395.78" width="119.4" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="598.424" y="-2395.78" width="119.4" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="601.424" y="-2382.58">+create()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="601.424" y="-2366.58">+form_valid()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="736.961" y="-2287.98" width="145.35" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="736.961" y="-2287.98" width="145.35" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="809.636" y="-2267.98">PedidoController</text>
+    <rect style="fill: #ffffff" x="736.961" y="-2259.98" width="145.35" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="736.961" y="-2259.98" width="145.35" height="8"/>
+    <rect style="fill: #ffffff" x="736.961" y="-2251.98" width="145.35" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="736.961" y="-2251.98" width="145.35" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="739.961" y="-2238.78">+create()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="739.961" y="-2222.78">+filter()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="739.961" y="-2206.78">+delete()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="739.961" y="-2190.78">+update()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="809.636,-2183.98 809.636,-2156.41 809.031,-2156.41 809.031,-2127.55 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="804.031,-2140.19 809.031,-2124.19 814.031,-2140.19 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="809.333" y="-2160.41">Acceso a</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="757.217" y="-2426.57" width="104.25" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="757.217" y="-2426.57" width="104.25" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="809.342" y="-2406.57">PedidoView</text>
+    <rect style="fill: #ffffff" x="757.217" y="-2398.57" width="104.25" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="757.217" y="-2398.57" width="104.25" height="8"/>
+    <rect style="fill: #ffffff" x="757.217" y="-2390.57" width="104.25" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="757.217" y="-2390.57" width="104.25" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="760.217" y="-2377.37">+show()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="904.289" y="-2426.57" width="161.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="904.289" y="-2426.57" width="161.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="984.939" y="-2406.57">DetallePedidoView</text>
+    <rect style="fill: #ffffff" x="904.289" y="-2398.57" width="161.3" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="904.289" y="-2398.57" width="161.3" height="8"/>
+    <rect style="fill: #ffffff" x="904.289" y="-2390.57" width="161.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="904.289" y="-2390.57" width="161.3" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="907.289" y="-2377.37">+show()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="736.961,-2273.98 658.124,-2273.98 658.124,-2346.6 "/>
+    <polygon style="fill: #ffffff" points="658.124,-2359.78 666.124,-2351.78 658.124,-2343.78 650.124,-2351.78 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="658.124,-2359.78 666.124,-2351.78 658.124,-2343.78 650.124,-2351.78 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="683.984" y="-2235.67">
+      <tspan x="683.984" y="-2235.67"></tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="882.311,-2273.98 984.939,-2273.98 984.939,-2357.4 "/>
+    <polygon style="fill: #ffffff" points="984.939,-2370.57 992.939,-2362.57 984.939,-2354.57 976.939,-2362.57 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="984.939,-2370.57 992.939,-2362.57 984.939,-2354.57 976.939,-2362.57 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="832.822" y="-2235.67">
+      <tspan x="832.822" y="-2235.67"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="488.056" y="-2121.49" width="157.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="488.056" y="-2121.49" width="157.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="566.856" y="-2101.49">ProductoEnPedido</text>
+    <rect style="fill: #ffffff" x="488.056" y="-2093.49" width="157.6" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="488.056" y="-2093.49" width="157.6" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="491.056" y="-2080.29">+idPedido: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="491.056" y="-2064.29">+idProducto: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="491.056" y="-2048.29">+cantidad</text>
+    <rect style="fill: #ffffff" x="488.056" y="-2041.49" width="157.6" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="488.056" y="-2041.49" width="157.6" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="761.681,-2082.84 703.669,-2082.84 703.669,-2083.49 645.656,-2083.49 "/>
+    <polygon style="fill: #000000" points="707.669,-2083.16 707.669,-2091.16 715.669,-2087.16 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="689.351,-1944.98 566.856,-1944.98 566.856,-2033.49 "/>
+    <polygon style="fill: #000000" points="630.103,-1944.98 630.103,-1952.98 638.103,-1948.98 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="433.473" y="-1895.97" width="162.85" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="433.473" y="-1895.97" width="162.85" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="514.898" y="-1875.97">ProductoEnBodega</text>
+    <rect style="fill: #ffffff" x="433.473" y="-1867.97" width="162.85" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="433.473" y="-1867.97" width="162.85" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="436.473" y="-1854.77">+idBodega: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="436.473" y="-1838.77">+idProducto: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="436.473" y="-1822.77">+cantidad</text>
+    <rect style="fill: #ffffff" x="433.473" y="-1815.97" width="162.85" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="433.473" y="-1815.97" width="162.85" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="407.517" y="-1793.59" width="87" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="407.517" y="-1793.59" width="87" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="451.017" y="-1773.59">BODEGA</text>
+    <rect style="fill: #ffffff" x="407.517" y="-1765.59" width="87" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="407.517" y="-1765.59" width="87" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="410.517" y="-1752.39">+id: pk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="410.517" y="-1736.39">+ubicacion</text>
+    <rect style="fill: #ffffff" x="407.517" y="-1729.59" width="87" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="407.517" y="-1729.59" width="87" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="514.898,-1807.97 514.898,-1786.97 514.855,-1786.97 514.855,-1755.59 494.517,-1755.59 "/>
+    <polygon style="fill: #000000" points="516.877,-1786.97 516.877,-1794.97 524.877,-1790.97 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="923.558,-2043.56 923.558,-2018.84 856.381,-2018.84 "/>
+    <polygon style="fill: #000000" points="891.969,-2018.84 891.969,-2026.84 899.969,-2022.84 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="225.614" y="-2219.87" width="157.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="225.614" y="-2219.87" width="157.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="304.164" y="-2199.87">CruzarPedidoView</text>
+    <rect style="fill: #ffffff" x="225.614" y="-2191.87" width="157.1" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="225.614" y="-2191.87" width="157.1" height="8"/>
+    <rect style="fill: #ffffff" x="225.614" y="-2183.87" width="157.1" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="225.614" y="-2183.87" width="157.1" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="228.614" y="-2170.67">+show()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="181.887" y="-2038.08" width="243.35" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="181.887" y="-2038.08" width="243.35" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="303.562" y="-2018.08">ProductoEnBodegaController</text>
+    <rect style="fill: #ffffff" x="181.887" y="-2010.08" width="243.35" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="181.887" y="-2010.08" width="243.35" height="8"/>
+    <rect style="fill: #ffffff" x="181.887" y="-2002.08" width="243.35" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="181.887" y="-2002.08" width="243.35" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="184.887" y="-1988.88">+create()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="184.887" y="-1972.88">+filter()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="184.887" y="-1956.88">+delete()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="184.887" y="-1940.88">+update()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="425.237,-1976.08 514.898,-1976.08 514.898,-1902.67 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="509.898,-1915.32 514.898,-1899.32 519.898,-1915.32 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="470.068" y="-1980.08">acceso a</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="447.685" y="-2267.64" width="238.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="447.685" y="-2267.64" width="238.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="566.735" y="-2247.64">ProductoEnPedidoController</text>
+    <rect style="fill: #ffffff" x="447.685" y="-2239.64" width="238.1" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="447.685" y="-2239.64" width="238.1" height="8"/>
+    <rect style="fill: #ffffff" x="447.685" y="-2231.64" width="238.1" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="447.685" y="-2231.64" width="238.1" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="450.685" y="-2218.44">+create()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="450.685" y="-2202.44">+filter()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="450.685" y="-2186.44">+delete()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="450.685" y="-2170.44">+update()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="303.562,-2038.08 303.562,-2100.98 304.164,-2100.98 304.164,-2150.7 "/>
+    <polygon style="fill: #ffffff" points="304.164,-2163.87 312.164,-2155.87 304.164,-2147.87 296.164,-2155.87 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="304.164,-2163.87 312.164,-2155.87 304.164,-2147.87 296.164,-2155.87 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="347.468" y="-2048.99">
+      <tspan x="347.468" y="-2048.99"></tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="447.685,-2205.64 415.199,-2205.64 415.199,-2205.87 395.886,-2205.87 "/>
+    <polygon style="fill: #ffffff" points="382.714,-2205.87 390.714,-2213.87 398.714,-2205.87 390.714,-2197.87 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="382.714,-2205.87 390.714,-2213.87 398.714,-2205.87 390.714,-2197.87 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="422.467" y="-2205.39">
+      <tspan x="422.467" y="-2205.39"></tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="809.636,-2287.98 809.636,-2329.28 809.342,-2329.28 809.342,-2357.4 "/>
+    <polygon style="fill: #ffffff" points="809.342,-2370.57 817.342,-2362.57 809.342,-2354.57 801.342,-2362.57 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="809.342,-2370.57 817.342,-2362.57 809.342,-2354.57 801.342,-2362.57 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="810.118" y="-2307.14">
+      <tspan x="810.118" y="-2307.14"></tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="566.735,-2163.64 566.735,-2146.57 566.856,-2146.57 566.856,-2128.19 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="561.856,-2140.84 566.856,-2124.84 571.856,-2140.84 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="257.192" y="-1877.18" width="94.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="257.192" y="-1877.18" width="94.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="304.292" y="-1857.18">StockView</text>
+    <rect style="fill: #ffffff" x="257.192" y="-1849.18" width="94.2" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="257.192" y="-1849.18" width="94.2" height="8"/>
+    <rect style="fill: #ffffff" x="257.192" y="-1841.18" width="94.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="257.192" y="-1841.18" width="94.2" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="260.192" y="-1827.98">+show()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="304.292,-1877.18 304.292,-1905.63 303.562,-1905.63 303.562,-1920.91 "/>
+    <polygon style="fill: #ffffff" points="303.562,-1934.08 311.562,-1926.08 303.562,-1918.08 295.562,-1926.08 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="303.562,-1934.08 311.562,-1926.08 303.562,-1918.08 295.562,-1926.08 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="324.387" y="-1892.98">
+      <tspan x="324.387" y="-1892.98"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="646.992" y="-1806.43" width="186.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="646.992" y="-1806.43" width="186.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="740.142" y="-1786.43">ProductoEnCotización</text>
+    <rect style="fill: #ffffff" x="646.992" y="-1778.43" width="186.3" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="646.992" y="-1778.43" width="186.3" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="649.992" y="-1765.23">+idPedido: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="649.992" y="-1749.23">+idCotizacion: fk</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="649.992" y="-1733.23">+cantidad</text>
+    <rect style="fill: #ffffff" x="646.992" y="-1726.43" width="186.3" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="646.992" y="-1726.43" width="186.3" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="887.21,-1752.01 860.251,-1752.01 860.251,-1752.43 833.292,-1752.43 "/>
+    <polygon style="fill: #000000" points="864.251,-1752.22 864.251,-1760.22 872.251,-1756.22 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1058.56" y="-1814" width="174.05" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1058.56" y="-1814" width="174.05" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1145.59" y="-1794">CotizacionController</text>
+    <rect style="fill: #ffffff" x="1058.56" y="-1786" width="174.05" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1058.56" y="-1786" width="174.05" height="8"/>
+    <rect style="fill: #ffffff" x="1058.56" y="-1778" width="174.05" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1058.56" y="-1778" width="174.05" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1061.56" y="-1764.8">+create()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1061.56" y="-1748.8">+filter()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1061.56" y="-1732.8">+delete()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1061.56" y="-1716.8">+update()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1058.56,-1752 1034.16,-1752 1034.16,-1752.01 1008.47,-1752.01 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1021.11,-1757.01 1005.11,-1752.01 1021.11,-1747.01 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1306.24" y="-1817.89" width="190" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1306.24" y="-1817.89" width="190" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1401.24" y="-1797.89">DetalleCotizacionView</text>
+    <rect style="fill: #ffffff" x="1306.24" y="-1789.89" width="190" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1306.24" y="-1789.89" width="190" height="8"/>
+    <rect style="fill: #ffffff" x="1306.24" y="-1781.89" width="190" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1306.24" y="-1781.89" width="190" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1309.24" y="-1768.69">+show()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1306.41" y="-1738.73" width="132.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1306.41" y="-1738.73" width="132.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1372.88" y="-1718.73">CotizacionView</text>
+    <rect style="fill: #ffffff" x="1306.41" y="-1710.73" width="132.95" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1306.41" y="-1710.73" width="132.95" height="8"/>
+    <rect style="fill: #ffffff" x="1306.41" y="-1702.73" width="132.95" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1306.41" y="-1702.73" width="132.95" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1309.41" y="-1689.53">+show()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1232.61,-1752 1269.42,-1752 1269.42,-1803.89 1293.06,-1803.89 "/>
+    <polygon style="fill: #ffffff" points="1306.24,-1803.89 1298.24,-1795.89 1290.24,-1803.89 1298.24,-1811.89 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1306.24,-1803.89 1298.24,-1795.89 1290.24,-1803.89 1298.24,-1811.89 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1232.99" y="-1771.89">
+      <tspan x="1232.99" y="-1771.89"></tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1232.61,-1752 1269.51,-1752 1269.51,-1692.73 1293.24,-1692.73 "/>
+    <polygon style="fill: #ffffff" points="1306.41,-1692.73 1298.41,-1684.73 1290.41,-1692.73 1298.41,-1700.73 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1306.41,-1692.73 1298.41,-1684.73 1290.41,-1692.73 1298.41,-1700.73 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1232.24" y="-1771.89">
+      <tspan x="1232.24" y="-1771.89"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1077.02" y="-2109.14" width="127" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1077.02" y="-2109.14" width="127" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1140.52" y="-2089.14">UserController</text>
+    <rect style="fill: #ffffff" x="1077.02" y="-2081.14" width="127" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1077.02" y="-2081.14" width="127" height="8"/>
+    <rect style="fill: #ffffff" x="1077.02" y="-2073.14" width="127" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1077.02" y="-2073.14" width="127" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1080.02" y="-2059.94">+create()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1080.02" y="-2043.94">+filter()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1080.02" y="-2027.94">+update()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1080.02" y="-2011.94">+delete()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1140.52,-2005.14 1140.52,-1985.39 1139.86,-1985.39 1139.86,-1964.34 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1134.86,-1976.99 1139.86,-1960.99 1144.86,-1976.99 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1081.6" y="-2227.35" width="117.15" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1081.6" y="-2227.35" width="117.15" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1140.17" y="-2207.35">RegistroView</text>
+    <rect style="fill: #ffffff" x="1081.6" y="-2199.35" width="117.15" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1081.6" y="-2199.35" width="117.15" height="8"/>
+    <rect style="fill: #ffffff" x="1081.6" y="-2191.35" width="117.15" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1081.6" y="-2191.35" width="117.15" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1084.6" y="-2178.15">+create()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1140.52,-2109.14 1140.52,-2140.25 1140.17,-2140.25 1140.17,-2158.18 "/>
+    <polygon style="fill: #ffffff" points="1140.17,-2171.35 1148.17,-2163.35 1140.17,-2155.35 1132.17,-2163.35 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1140.17,-2171.35 1148.17,-2163.35 1140.17,-2155.35 1132.17,-2163.35 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1137.55" y="-2138.31">
+      <tspan x="1137.55" y="-2138.31"></tspan>
+    </text>
+  </g>
+</svg>
